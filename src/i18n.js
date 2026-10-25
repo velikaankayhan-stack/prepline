@@ -82,7 +82,12 @@ tr:{
  s_about:"Hakkında",s_ver:"Sürüm {0}",s_local:"Verilerin sadece bu cihazda, tarayıcında saklanır. Hesap yok, sunucuya bir şey gönderilmez. Cihaz değiştirirken \"Yedek al\" kullan.",
  s_disc:"Bu uygulama College Board ile bağlantılı değildir. SAT, College Board'un tescilli markasıdır.",s_src:"Açık kaynak",s_priv:"Gizlilik",
  mem_warn:"Veritabanı açılamadı — bu görünümde veriler kalıcı değil. Gizli sekmedeysen normal sekmede aç.",
- tagline:"SAT için ücretsiz günlük program"
+ tagline:"SAT için ücretsiz günlük program",
+ inst_title:"Telefonuna yükle",inst_android:"Uygulama gibi açılır, çevrimdışı da çalışır.",inst_btn:"Yükle",inst_later:"Sonra",
+ inst_ios:"Safari'de alttaki Paylaş düğmesine (□↑) bas, sonra \"Ana Ekrana Ekle\".",
+ upd_ready:"Yeni sürüm hazır.",upd_btn:"Yenile",
+ bk_title:"Yedek almayı unutma",bk_text:"Verilerin sadece bu cihazda. Telefon kaybolursa ya da tarayıcı verisi silinirse gider. Son yedek: {0}.",bk_never:"hiç",
+ s_feedback:"Geri bildirim / hata bildir"
 },
 en:{
  nav_today:"Today",nav_words:"Words",nav_err:"Mistakes",nav_learn:"Learn",nav_math:"Math",nav_prog:"Progress",
@@ -166,5 +171,10 @@ en:{
  s_about:"About",s_ver:"Version {0}",s_local:"Your data stays on this device, in your browser. No account, nothing is sent to a server. Use \"Download backup\" when you switch devices.",
  s_disc:"This app is not affiliated with College Board. SAT is a trademark registered by College Board.",s_src:"Open source",s_priv:"Privacy",
  mem_warn:"Could not open the database — data will not be saved in this view. If you are in a private window, open a normal one.",
- tagline:"A free daily SAT study plan"
+ tagline:"A free daily SAT study plan",
+ inst_title:"Install on your phone",inst_android:"Opens like an app and works offline.",inst_btn:"Install",inst_later:"Later",
+ inst_ios:"In Safari, tap the Share button (□↑) at the bottom, then \"Add to Home Screen\".",
+ upd_ready:"A new version is ready.",upd_btn:"Reload",
+ bk_title:"Don't forget a backup",bk_text:"Your data lives only on this device. If you lose the phone or clear browser data, it is gone. Last backup: {0}.",bk_never:"never",
+ s_feedback:"Feedback / report a bug"
 }};

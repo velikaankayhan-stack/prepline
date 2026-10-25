@@ -19,11 +19,22 @@
   <div id="noteList" style="margin-top:6px"></div>
 </div>
 
+<div id="updToast" class="hide"><span data-i="upd_ready"></span> <button class="sm primary" onclick="location.reload()" data-i="upd_btn"></button></div>
 <div id="ob" class="hide"><div class="obw" id="obBox"></div></div>
 
 <main>
 <section id="s-bugun" class="on">
   <div id="memWarn" class="warn hide" data-i="mem_warn"></div>
+  <div class="card hide" id="instCard">
+    <h2 data-i="inst_title"></h2>
+    <p class="muted" id="instText" style="margin:0 0 10px"></p>
+    <div class="row"><button class="primary" id="instBtn" onclick="doInstall()" data-i="inst_btn"></button><button class="ghost" onclick="hideInstall()" data-i="inst_later"></button></div>
+  </div>
+  <div class="card hide" id="bkCard">
+    <h2 data-i="bk_title"></h2>
+    <p class="muted" id="bkText" style="margin:0 0 10px"></p>
+    <div class="row"><button class="primary" onclick="exportData()" data-i="s_export"></button><button class="ghost" onclick="snoozeBackup()" data-i="inst_later"></button></div>
+  </div>
   <div class="card">
     <h2 id="todayTitle"></h2>
     <p class="muted" id="nextUp" style="margin:0 0 10px"></p>
@@ -253,7 +264,7 @@
       <p id="verInfo"></p>
       <p data-i="s_local"></p>
       <p data-i="s_disc"></p>
-      <p><span id="srcWrap"><a id="srcLink" href="#" target="_blank" rel="noopener" data-i="s_src"></a> · </span><a href="privacy.html" target="_blank" rel="noopener" data-i="s_priv"></a></p>
+      <p><span id="srcWrap"><a id="srcLink" href="#" target="_blank" rel="noopener" data-i="s_src"></a> · </span><a href="privacy.html" target="_blank" rel="noopener" data-i="s_priv"></a> · <a id="fbLink" href="#" target="_blank" rel="noopener" data-i="s_feedback"></a></p>
     </div>
   </div>
 </section>

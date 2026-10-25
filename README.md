@@ -12,6 +12,7 @@
 - **Vocabulary.** Spaced repetition, a quick-capture word box, one academic word a day, roots, and SAT math terms.
 - **Question log and skill focus.** Log every Question Bank set; tasks focus on your weakest skill (below 80%).
 - **Mistake log and progress.** Track why you miss questions, practice test scores, and a consistency gauge.
+- **App-like.** Install button, offline use, update notice, and a reminder to back up your data.
 
 ## Use it
 
@@ -25,7 +26,7 @@ https://prepline.velikaankayhan.workers.dev
 
 1. Fork or copy this repository to your GitHub account.
 2. In Cloudflare: **Workers & Pages → Create → Import a repository**, pick the repository, and deploy. `wrangler.jsonc` tells Cloudflare to serve only the `public/` folder.
-3. Optional: **Web Analytics** in Cloudflare → add the site → paste the snippet where `build.py` says *Cloudflare Web Analytics*, then rebuild.
+3. Optional: **Web Analytics** in Cloudflare → add the site → put the token in `CF_BEACON_TOKEN` in `build.py`, then rebuild.
 4. Put your repository URL in `SRC_URL` in `src/app1.js`.
 
 GitHub Pages works too if you publish the `public/` folder.

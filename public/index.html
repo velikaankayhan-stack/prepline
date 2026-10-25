@@ -11,7 +11,13 @@
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<!-- Cloudflare Web Analytics: paste the snippet from the Cloudflare dashboard here (no cookies, no personal data). -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Prepline — free SAT study plan">
+<meta property="og:description" content="Daily plan, narrated grammar lessons, vocabulary and progress tracking. Free, no account. Türkçe / English.">
+<meta property="og:url" content="https://prepline.velikaankayhan.workers.dev/">
+<meta property="og:image" content="https://prepline.velikaankayhan.workers.dev/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 
 :root{
@@ -237,6 +243,11 @@ a{color:var(--acc)}
 input,select,textarea,button{box-sizing:border-box}
 .row>*{min-width:0}
 
+#updToast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(86px + env(safe-area-inset-bottom,0px));z-index:40;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 10px 8px 14px;box-shadow:0 8px 24px rgba(0,0,0,.25);
+  display:flex;gap:10px;align-items:center;font-size:14px;white-space:nowrap}
+#updToast.hide{display:none}
+
 </style>
 </head>
 <body>
@@ -261,11 +272,22 @@ input,select,textarea,button{box-sizing:border-box}
   <div id="noteList" style="margin-top:6px"></div>
 </div>
 
+<div id="updToast" class="hide"><span data-i="upd_ready"></span> <button class="sm primary" onclick="location.reload()" data-i="upd_btn"></button></div>
 <div id="ob" class="hide"><div class="obw" id="obBox"></div></div>
 
 <main>
 <section id="s-bugun" class="on">
   <div id="memWarn" class="warn hide" data-i="mem_warn"></div>
+  <div class="card hide" id="instCard">
+    <h2 data-i="inst_title"></h2>
+    <p class="muted" id="instText" style="margin:0 0 10px"></p>
+    <div class="row"><button class="primary" id="instBtn" onclick="doInstall()" data-i="inst_btn"></button><button class="ghost" onclick="hideInstall()" data-i="inst_later"></button></div>
+  </div>
+  <div class="card hide" id="bkCard">
+    <h2 data-i="bk_title"></h2>
+    <p class="muted" id="bkText" style="margin:0 0 10px"></p>
+    <div class="row"><button class="primary" onclick="exportData()" data-i="s_export"></button><button class="ghost" onclick="snoozeBackup()" data-i="inst_later"></button></div>
+  </div>
   <div class="card">
     <h2 id="todayTitle"></h2>
     <p class="muted" id="nextUp" style="margin:0 0 10px"></p>
@@ -495,7 +517,7 @@ input,select,textarea,button{box-sizing:border-box}
       <p id="verInfo"></p>
       <p data-i="s_local"></p>
       <p data-i="s_disc"></p>
-      <p><span id="srcWrap"><a id="srcLink" href="#" target="_blank" rel="noopener" data-i="s_src"></a> · </span><a href="privacy.html" target="_blank" rel="noopener" data-i="s_priv"></a></p>
+      <p><span id="srcWrap"><a id="srcLink" href="#" target="_blank" rel="noopener" data-i="s_src"></a> · </span><a href="privacy.html" target="_blank" rel="noopener" data-i="s_priv"></a> · <a id="fbLink" href="#" target="_blank" rel="noopener" data-i="s_feedback"></a></p>
     </div>
   </div>
 </section>
@@ -595,7 +617,12 @@ tr:{
  s_about:"Hakkında",s_ver:"Sürüm {0}",s_local:"Verilerin sadece bu cihazda, tarayıcında saklanır. Hesap yok, sunucuya bir şey gönderilmez. Cihaz değiştirirken \"Yedek al\" kullan.",
  s_disc:"Bu uygulama College Board ile bağlantılı değildir. SAT, College Board'un tescilli markasıdır.",s_src:"Açık kaynak",s_priv:"Gizlilik",
  mem_warn:"Veritabanı açılamadı — bu görünümde veriler kalıcı değil. Gizli sekmedeysen normal sekmede aç.",
- tagline:"SAT için ücretsiz günlük program"
+ tagline:"SAT için ücretsiz günlük program",
+ inst_title:"Telefonuna yükle",inst_android:"Uygulama gibi açılır, çevrimdışı da çalışır.",inst_btn:"Yükle",inst_later:"Sonra",
+ inst_ios:"Safari'de alttaki Paylaş düğmesine (□↑) bas, sonra \"Ana Ekrana Ekle\".",
+ upd_ready:"Yeni sürüm hazır.",upd_btn:"Yenile",
+ bk_title:"Yedek almayı unutma",bk_text:"Verilerin sadece bu cihazda. Telefon kaybolursa ya da tarayıcı verisi silinirse gider. Son yedek: {0}.",bk_never:"hiç",
+ s_feedback:"Geri bildirim / hata bildir"
 },
 en:{
  nav_today:"Today",nav_words:"Words",nav_err:"Mistakes",nav_learn:"Learn",nav_math:"Math",nav_prog:"Progress",
@@ -679,7 +706,12 @@ en:{
  s_about:"About",s_ver:"Version {0}",s_local:"Your data stays on this device, in your browser. No account, nothing is sent to a server. Use \"Download backup\" when you switch devices.",
  s_disc:"This app is not affiliated with College Board. SAT is a trademark registered by College Board.",s_src:"Open source",s_priv:"Privacy",
  mem_warn:"Could not open the database — data will not be saved in this view. If you are in a private window, open a normal one.",
- tagline:"A free daily SAT study plan"
+ tagline:"A free daily SAT study plan",
+ inst_title:"Install on your phone",inst_android:"Opens like an app and works offline.",inst_btn:"Install",inst_later:"Later",
+ inst_ios:"In Safari, tap the Share button (□↑) at the bottom, then \"Add to Home Screen\".",
+ upd_ready:"A new version is ready.",upd_btn:"Reload",
+ bk_title:"Don't forget a backup",bk_text:"Your data lives only on this device. If you lose the phone or clear browser data, it is gone. Last backup: {0}.",bk_never:"never",
+ s_feedback:"Feedback / report a bug"
 }};
 
 /* içerik / content — generated by mkcontent.py */
@@ -800,8 +832,9 @@ var CURR=[
 "use strict";
 /* ---------- yapılandırma / config ---------- */
 var APP_NAME="Prepline";          /* geçici isim / working name — change in one place */
-var APP_VER="1.0.1";
-var SRC_URL="https://github.com/velikaankayhan-stack/prepline";                    /* GitHub repo URL, fill after publishing */
+var APP_VER="1.1.0";
+var SRC_URL="https://github.com/velikaankayhan-stack/prepline";
+var FEEDBACK_URL="https://github.com/velikaankayhan-stack/prepline/issues/new";   /* değiştirilebilir: e-posta için "mailto:..." */                    /* GitHub repo URL, fill after publishing */
 var QB_URL="https://satsuitequestionbank.collegeboard.org/";
 var BB_URL="https://bluebook.collegeboard.org/";
 var SNE_URL="https://www.snexplores.org/";
@@ -1814,6 +1847,7 @@ function renderSettings(){
   var th=t("themes"); chips("chTheme",[["",th[0]],["light",th[1]],["dark",th[2]],["amoled",th[3]]],S.theme,"setTheme");
   $("verInfo").textContent=APP_NAME+" · "+t("s_ver",APP_VER)+(MEM?" · memory":"");
   if(SRC_URL) $("srcLink").href=SRC_URL; else $("srcWrap").style.display="none";
+  if(FEEDBACK_URL) $("fbLink").href=FEEDBACK_URL; else $("fbLink").style.display="none";
 }
 function setLang(l){ LANG=l; S.prof.lang=l; if(l==="tr") S.prof.esl=true; saveProf().then(function(){ applyI18n(); renderAll(); }); }
 function examSelChange(){ var v=$("examSel").value; if(v==="other"){ $("examDate").classList.remove("hide"); $("examDate").focus(); } else saveExam(v); }
@@ -1828,7 +1862,7 @@ function setTheme(v){ S.theme=v; applyTheme(); setKV("theme",v).then(renderSetti
 function applyTheme(){ if(S.theme) document.documentElement.setAttribute("data-theme",S.theme); else document.documentElement.removeAttribute("data-theme"); }
 
 /* ---------- yedek / backup ---------- */
-var KV_KEYS=["prof","tasks","inbox","qlog","roots","gram","theme","showTr","revLimit","newLimit","mathDrip"];
+var KV_KEYS=["lastBackup","prof","tasks","inbox","qlog","roots","gram","theme","showTr","revLimit","newLimit","mathDrip"];
 function exportData(){
   var d={app:APP_NAME,v:APP_VER,at:new Date().toISOString(),words:S.words,errors:S.errors,tests:S.tests,learned:S.learned,kv:{}};
   Promise.all(KV_KEYS.map(function(k){ return getKV(k,null).then(function(v){ d.kv[k]=v; }); })).then(function(){
@@ -1837,6 +1871,7 @@ function exportData(){
     a.download=slug(APP_NAME)+"-backup-"+todayStr()+".json";
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
     setTimeout(function(){ URL.revokeObjectURL(a.href); },2000);
+    setKV("lastBackup",todayStr()).then(renderBackup);
   });
 }
 function wipe(){ return Promise.all(["words","errors","tests","learned","kv"].map(sClear)); }
@@ -1859,6 +1894,41 @@ function importData(inp){
   };
   fr.readAsText(f);
 }
+/* ---------- yükleme düğmesi, güncelleme, yedek hatırlatma / install, update, backup reminder ---------- */
+var INST_EVT=null;
+function isStandalone(){ return (window.matchMedia&&matchMedia("(display-mode: standalone)").matches)||navigator.standalone===true; }
+function isIOS(){ return /iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1); }
+window.addEventListener("beforeinstallprompt",function(e){ e.preventDefault(); INST_EVT=e; renderInstall(); });
+window.addEventListener("appinstalled",function(){ INST_EVT=null; renderInstall(); });
+function renderInstall(){
+  var c=$("instCard"); if(!c||!S.prof) return;
+  var hidden=false; try{ hidden=localStorage.getItem("instHide")===todayStr().slice(0,7); }catch(e){}
+  var show=!isStandalone() && !hidden && (INST_EVT || isIOS());
+  c.classList.toggle("hide",!show);
+  if(!show) return;
+  $("instText").textContent=INST_EVT?t("inst_android"):t("inst_ios");
+  $("instBtn").classList.toggle("hide",!INST_EVT);
+}
+function doInstall(){ if(!INST_EVT) return; INST_EVT.prompt(); INST_EVT.userChoice.then(function(){ INST_EVT=null; renderInstall(); }); }
+function hideInstall(){ try{ localStorage.setItem("instHide",todayStr().slice(0,7)); }catch(e){} renderInstall(); }  /* bir ay sorma */
+function renderBackup(){
+  var c=$("bkCard"); if(!c||!S.prof) return;
+  getKV("lastBackup",null).then(function(lb){
+    var ref=lb||S.prof.start, due=daysBetween(ref,todayStr())>=14 && (S.words.length>=15||S.errors.length>=5||S.tests.length>=2);
+    getKV("bkSnooze",null).then(function(sn){
+      var show=due && !(sn && daysBetween(sn,todayStr())<3);
+      c.classList.toggle("hide",!show);
+      if(show) $("bkText").textContent=t("bk_text",lb?fmtDate(lb):t("bk_never"));
+    });
+  });
+}
+function snoozeBackup(){ setKV("bkSnooze",todayStr()).then(renderBackup); }
+function initUpdates(){
+  if(!("serviceWorker" in navigator)) return;
+  var had=!!navigator.serviceWorker.controller;
+  navigator.serviceWorker.addEventListener("controllerchange",function(){ if(had) $("updToast").classList.remove("hide"); });
+}
+
 function resetAll(){ if(!confirm(t("s_reset_q"))) return; wipe().then(function(){ location.reload(); }); }
 
 /* ---------- ilk kurulum / onboarding ---------- */
@@ -1951,6 +2021,7 @@ function renderAll(){
   $("btnTureng").classList.toggle("hide",LANG!=="tr");
   renderToday(); renderWords(); renderChips(); renderErrors(); renderLearn(); renderProgress();
   renderSettings(); renderMath(); renderNotes(); renderQlog(); renderRoots(); renderGram();
+  renderInstall(); renderBackup();
 }
 function boot2(){
   return getKV("prof",null).then(function(p){
@@ -1966,7 +2037,7 @@ function boot(){
     return boot2();
   });
   if("serviceWorker" in navigator && /^https?:$/.test(location.protocol) && window.self===window.top){
-    try{ navigator.serviceWorker.register("sw.js").catch(function(){}); }catch(e){}
+    try{ initUpdates(); navigator.serviceWorker.register("sw.js").catch(function(){}); }catch(e){}
   }
 }
 var LAST_DAY=null;
