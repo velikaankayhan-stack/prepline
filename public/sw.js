@@ -1,5 +1,5 @@
 /* Offline support: serve from cache, refresh in the background. Bump VERSION on every release. */
-var VERSION="scorepath-1.2.0";
+var VERSION="scorepath-1.2.1";
 var CORE=["./","index.html","manifest.json","privacy.html","og.png","icons/icon.svg","icons/icon-192.png","icons/icon-512.png","icons/maskable-512.png"];
 self.addEventListener("install",function(e){
   e.waitUntil(caches.open(VERSION).then(function(c){ return c.addAll(CORE); }).then(function(){ return self.skipWaiting(); }));
