@@ -17,19 +17,22 @@
 
 Open the site and choose **Add to Home Screen** (iPhone: Share → Add to Home Screen; Android: menu → Install app).
 
+## Live site
+
+https://prepline.velikaankayhan.workers.dev
+
 ## Deploy your own copy (free)
 
-1. Push this folder to a public GitHub repository.
-2. In Cloudflare: **Workers & Pages → Create → Pages → Connect to Git**, pick the repository.
-   - Framework preset: *None* · Build command: *(empty)* · Build output directory: `/`
-3. Optional: **Web Analytics** in Cloudflare → add the site → paste the snippet where `index.html` says *Cloudflare Web Analytics*.
-4. Put the repository URL in `SRC_URL` in `src/app1.js` so the app links to its source.
+1. Fork or copy this repository to your GitHub account.
+2. In Cloudflare: **Workers & Pages → Create → Import a repository**, pick the repository, and deploy. `wrangler.jsonc` tells Cloudflare to serve only the `public/` folder.
+3. Optional: **Web Analytics** in Cloudflare → add the site → paste the snippet where `build.py` says *Cloudflare Web Analytics*, then rebuild.
+4. Put your repository URL in `SRC_URL` in `src/app1.js`.
 
-GitHub Pages works too: *Settings → Pages → Deploy from branch → main / root*.
+GitHub Pages works too if you publish the `public/` folder.
 
 ## Develop
 
-The site is a single `index.html` built from `src/`:
+The site lives in `public/`. Its `index.html` is built from `src/`:
 
 ```
 src/app.css     styles
@@ -39,15 +42,15 @@ src/content.js  grammar rules, lessons, word lists, curriculum
 src/app1-5.js   app logic
 ```
 
-Edit files in `src/`, then run `python3 build.py`. For each release, bump `APP_VER` in `src/app1.js` and `VERSION` in `sw.js` so phones pick up the update.
+Edit files in `src/`, then run `python3 build.py` (it writes `public/index.html`). For each release, bump `APP_VER` in `src/app1.js` and `VERSION` in `public/sw.js` so phones pick up the update.
 
-**Rename the app:** change `APP_NAME` in `src/app1.js`, the `<title>` in `build.py`, `manifest.json`, `privacy.html`, and `VERSION` in `sw.js`.
+**Rename the app:** change `APP_NAME` in `src/app1.js`, the `<title>` in `build.py`, `public/manifest.json`, `public/privacy.html`, and `VERSION` in `public/sw.js`.
 
 **Add a language:** copy the `en` block in `src/i18n.js`, translate it, and add the language to the `{tr, en}` objects in `src/content.js`. Have a native speaker check it.
 
 ## Privacy
 
-No accounts, no cookies, no personal data. Everything is stored in the browser (IndexedDB). See [privacy.html](privacy.html).
+No accounts, no cookies, no personal data. Everything is stored in the browser (IndexedDB). See [public/privacy.html](public/privacy.html).
 
 ## Credits
 

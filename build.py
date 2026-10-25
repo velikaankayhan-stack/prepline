@@ -27,5 +27,5 @@ html='''<!doctype html>
 </body>
 </html>
 '''
-open(os.path.join(R,'index.html'),'w',encoding='utf-8').write(html)
+open(os.path.join(R,'public','index.html'),'w',encoding='utf-8').write(html)
 print(len(html))

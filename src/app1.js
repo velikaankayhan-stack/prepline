@@ -1,8 +1,8 @@
 "use strict";
 /* ---------- yapılandırma / config ---------- */
 var APP_NAME="Prepline";          /* geçici isim / working name — change in one place */
-var APP_VER="1.0.0";
-var SRC_URL="";                    /* GitHub repo URL, fill after publishing */
+var APP_VER="1.0.1";
+var SRC_URL="https://github.com/velikaankayhan-stack/prepline";                    /* GitHub repo URL, fill after publishing */
 var QB_URL="https://satsuitequestionbank.collegeboard.org/";
 var BB_URL="https://bluebook.collegeboard.org/";
 var SNE_URL="https://www.snexplores.org/";
