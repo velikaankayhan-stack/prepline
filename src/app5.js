@@ -75,6 +75,7 @@ function renderSettings(){
   var th=t("themes"); chips("chTheme",[["",th[0]],["light",th[1]],["dark",th[2]],["amoled",th[3]]],S.theme,"setTheme");
   $("verInfo").textContent=APP_NAME+" · "+t("s_ver",APP_VER)+(MEM?" · memory":"");
   if(SRC_URL) $("srcLink").href=SRC_URL; else $("srcWrap").style.display="none";
+  if(FEEDBACK_URL) $("fbLink").href=FEEDBACK_URL; else $("fbLink").style.display="none";
 }
 function setLang(l){ LANG=l; S.prof.lang=l; if(l==="tr") S.prof.esl=true; saveProf().then(function(){ applyI18n(); renderAll(); }); }
 function examSelChange(){ var v=$("examSel").value; if(v==="other"){ $("examDate").classList.remove("hide"); $("examDate").focus(); } else saveExam(v); }
@@ -89,7 +90,7 @@ function setTheme(v){ S.theme=v; applyTheme(); setKV("theme",v).then(renderSetti
 function applyTheme(){ if(S.theme) document.documentElement.setAttribute("data-theme",S.theme); else document.documentElement.removeAttribute("data-theme"); }
 
 /* ---------- yedek / backup ---------- */
-var KV_KEYS=["prof","tasks","inbox","qlog","roots","gram","theme","showTr","revLimit","newLimit","mathDrip"];
+var KV_KEYS=["lastBackup","prof","tasks","inbox","qlog","roots","gram","theme","showTr","revLimit","newLimit","mathDrip"];
 function exportData(){
   var d={app:APP_NAME,v:APP_VER,at:new Date().toISOString(),words:S.words,errors:S.errors,tests:S.tests,learned:S.learned,kv:{}};
   Promise.all(KV_KEYS.map(function(k){ return getKV(k,null).then(function(v){ d.kv[k]=v; }); })).then(function(){
@@ -98,6 +99,7 @@ function exportData(){
     a.download=slug(APP_NAME)+"-backup-"+todayStr()+".json";
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
     setTimeout(function(){ URL.revokeObjectURL(a.href); },2000);
+    setKV("lastBackup",todayStr()).then(renderBackup);
   });
 }
 function wipe(){ return Promise.all(["words","errors","tests","learned","kv"].map(sClear)); }
@@ -120,6 +122,41 @@ function importData(inp){
   };
   fr.readAsText(f);
 }
+/* ---------- yükleme düğmesi, güncelleme, yedek hatırlatma / install, update, backup reminder ---------- */
+var INST_EVT=null;
+function isStandalone(){ return (window.matchMedia&&matchMedia("(display-mode: standalone)").matches)||navigator.standalone===true; }
+function isIOS(){ return /iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1); }
+window.addEventListener("beforeinstallprompt",function(e){ e.preventDefault(); INST_EVT=e; renderInstall(); });
+window.addEventListener("appinstalled",function(){ INST_EVT=null; renderInstall(); });
+function renderInstall(){
+  var c=$("instCard"); if(!c||!S.prof) return;
+  var hidden=false; try{ hidden=localStorage.getItem("instHide")===todayStr().slice(0,7); }catch(e){}
+  var show=!isStandalone() && !hidden && (INST_EVT || isIOS());
+  c.classList.toggle("hide",!show);
+  if(!show) return;
+  $("instText").textContent=INST_EVT?t("inst_android"):t("inst_ios");
+  $("instBtn").classList.toggle("hide",!INST_EVT);
+}
+function doInstall(){ if(!INST_EVT) return; INST_EVT.prompt(); INST_EVT.userChoice.then(function(){ INST_EVT=null; renderInstall(); }); }
+function hideInstall(){ try{ localStorage.setItem("instHide",todayStr().slice(0,7)); }catch(e){} renderInstall(); }  /* bir ay sorma */
+function renderBackup(){
+  var c=$("bkCard"); if(!c||!S.prof) return;
+  getKV("lastBackup",null).then(function(lb){
+    var ref=lb||S.prof.start, due=daysBetween(ref,todayStr())>=14 && (S.words.length>=15||S.errors.length>=5||S.tests.length>=2);
+    getKV("bkSnooze",null).then(function(sn){
+      var show=due && !(sn && daysBetween(sn,todayStr())<3);
+      c.classList.toggle("hide",!show);
+      if(show) $("bkText").textContent=t("bk_text",lb?fmtDate(lb):t("bk_never"));
+    });
+  });
+}
+function snoozeBackup(){ setKV("bkSnooze",todayStr()).then(renderBackup); }
+function initUpdates(){
+  if(!("serviceWorker" in navigator)) return;
+  var had=!!navigator.serviceWorker.controller;
+  navigator.serviceWorker.addEventListener("controllerchange",function(){ if(had) $("updToast").classList.remove("hide"); });
+}
+
 function resetAll(){ if(!confirm(t("s_reset_q"))) return; wipe().then(function(){ location.reload(); }); }
 
 /* ---------- ilk kurulum / onboarding ---------- */
@@ -212,6 +249,7 @@ function renderAll(){
   $("btnTureng").classList.toggle("hide",LANG!=="tr");
   renderToday(); renderWords(); renderChips(); renderErrors(); renderLearn(); renderProgress();
   renderSettings(); renderMath(); renderNotes(); renderQlog(); renderRoots(); renderGram();
+  renderInstall(); renderBackup();
 }
 function boot2(){
   return getKV("prof",null).then(function(p){
@@ -227,7 +265,7 @@ function boot(){
     return boot2();
   });
   if("serviceWorker" in navigator && /^https?:$/.test(location.protocol) && window.self===window.top){
-    try{ navigator.serviceWorker.register("sw.js").catch(function(){}); }catch(e){}
+    try{ initUpdates(); navigator.serviceWorker.register("sw.js").catch(function(){}); }catch(e){}
   }
 }
 var LAST_DAY=null;

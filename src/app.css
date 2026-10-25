@@ -221,3 +221,8 @@ a{color:var(--acc)}
 
 input,select,textarea,button{box-sizing:border-box}
 .row>*{min-width:0}
+
+#updToast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(86px + env(safe-area-inset-bottom,0px));z-index:40;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 10px 8px 14px;box-shadow:0 8px 24px rgba(0,0,0,.25);
+  display:flex;gap:10px;align-items:center;font-size:14px;white-space:nowrap}
+#updToast.hide{display:none}
