@@ -1,6 +1,6 @@
 import os,json
 SITE_URL="https://prepline.velikaankayhan.workers.dev/"   # alan adı alınınca değiştir / change after buying a domain
-CF_BEACON_TOKEN=""   # Cloudflare Web Analytics token
+CF_BEACON_TOKEN="f66ce86ccff34e79903c1508868e56ad"   # Cloudflare Web Analytics token
 R=os.path.dirname(os.path.abspath(__file__)); src=lambda f:open(os.path.join(R,'src',f),encoding='utf-8').read()
 js="\n".join(src(f) for f in ['i18n.js','content.js','app1.js','app2.js','app3.js','app4.js','app5.js'])
 html='''<!doctype html>
