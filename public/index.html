@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Prepline</title>
+<title>Scorepath</title>
 <meta name="description" content="A free daily SAT study plan: vocabulary, grammar lessons with narration, question log and progress tracking. Türkçe ve English.">
 <meta name="theme-color" content="#2255c8">
 <link rel="manifest" href="manifest.json">
@@ -12,7 +12,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Prepline — free SAT study plan">
+<meta property="og:title" content="Scorepath — free SAT study plan">
 <meta property="og:description" content="Daily plan, narrated grammar lessons, vocabulary and progress tracking. Free, no account. Türkçe / English.">
 <meta property="og:url" content="https://prepline.velikaankayhan.workers.dev/">
 <meta property="og:image" content="https://prepline.velikaankayhan.workers.dev/og.png">
@@ -831,10 +831,10 @@ var CURR=[
 
 "use strict";
 /* ---------- yapılandırma / config ---------- */
-var APP_NAME="Prepline";          /* geçici isim / working name — change in one place */
-var APP_VER="1.1.0";
+var APP_NAME="Scorepath";
+var APP_VER="1.2.0";
 var SRC_URL="https://github.com/velikaankayhan-stack/prepline";
-var FEEDBACK_URL="https://github.com/velikaankayhan-stack/prepline/issues/new";   /* değiştirilebilir: e-posta için "mailto:..." */                    /* GitHub repo URL, fill after publishing */
+var FEEDBACK_URL="mailto:velikaankayhan@proton.me?subject=Scorepath%20feedback";                    /* GitHub repo URL, fill after publishing */
 var QB_URL="https://satsuitequestionbank.collegeboard.org/";
 var BB_URL="https://bluebook.collegeboard.org/";
 var SNE_URL="https://www.snexplores.org/";
@@ -882,7 +882,7 @@ var autoId={words:1,errors:1,tests:1};
 function openDB(){
   return new Promise(function(res){
     var r;
-    try{ r=indexedDB.open("prepline",1); }catch(e){ MEM=true; return res(); }
+    try{ r=indexedDB.open("prepline",1)   /* eski ad korunur: mevcut kullanıcıların verisi kaybolmasın */; }catch(e){ MEM=true; return res(); }
     r.onupgradeneeded=function(e){
       var d=e.target.result;
       ["words","errors","tests"].forEach(function(s){ if(!d.objectStoreNames.contains(s)) d.createObjectStore(s,{keyPath:"id",autoIncrement:true}); });

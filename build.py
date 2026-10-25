@@ -8,7 +8,7 @@ html='''<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Prepline</title>
+<title>Scorepath</title>
 <meta name="description" content="A free daily SAT study plan: vocabulary, grammar lessons with narration, question log and progress tracking. Türkçe ve English.">
 <meta name="theme-color" content="#2255c8">
 <link rel="manifest" href="manifest.json">
@@ -17,7 +17,7 @@ html='''<!doctype html>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Prepline — free SAT study plan">
+<meta property="og:title" content="Scorepath — free SAT study plan">
 <meta property="og:description" content="Daily plan, narrated grammar lessons, vocabulary and progress tracking. Free, no account. Türkçe / English.">
 <meta property="og:url" content="'''+SITE_URL+'''">
 <meta property="og:image" content="'''+SITE_URL+'''og.png">

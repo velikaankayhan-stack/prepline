@@ -1,9 +1,9 @@
 "use strict";
 /* ---------- yapılandırma / config ---------- */
-var APP_NAME="Prepline";          /* geçici isim / working name — change in one place */
-var APP_VER="1.1.0";
+var APP_NAME="Scorepath";
+var APP_VER="1.2.0";
 var SRC_URL="https://github.com/velikaankayhan-stack/prepline";
-var FEEDBACK_URL="https://github.com/velikaankayhan-stack/prepline/issues/new";   /* değiştirilebilir: e-posta için "mailto:..." */                    /* GitHub repo URL, fill after publishing */
+var FEEDBACK_URL="mailto:velikaankayhan@proton.me?subject=Scorepath%20feedback";                    /* GitHub repo URL, fill after publishing */
 var QB_URL="https://satsuitequestionbank.collegeboard.org/";
 var BB_URL="https://bluebook.collegeboard.org/";
 var SNE_URL="https://www.snexplores.org/";
@@ -51,7 +51,7 @@ var autoId={words:1,errors:1,tests:1};
 function openDB(){
   return new Promise(function(res){
     var r;
-    try{ r=indexedDB.open("prepline",1); }catch(e){ MEM=true; return res(); }
+    try{ r=indexedDB.open("prepline",1)   /* eski ad korunur: mevcut kullanıcıların verisi kaybolmasın */; }catch(e){ MEM=true; return res(); }
     r.onupgradeneeded=function(e){
       var d=e.target.result;
       ["words","errors","tests"].forEach(function(s){ if(!d.objectStoreNames.contains(s)) d.createObjectStore(s,{keyPath:"id",autoIncrement:true}); });

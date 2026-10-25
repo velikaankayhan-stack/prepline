@@ -1,8 +1,8 @@
-# Prepline
+# Scorepath
 
 **A free, open-source daily study plan for the SAT.** Works offline, installs on your phone, and keeps all data on your own device. Available in English and Turkish.
 
-> Prepline is not affiliated with College Board. SAT is a trademark registered by College Board.
+> Scorepath is not affiliated with College Board. SAT is a trademark registered by College Board.
 
 ## Features
 
@@ -45,7 +45,7 @@ src/app1-5.js   app logic
 
 Edit files in `src/`, then run `python3 build.py` (it writes `public/index.html`). For each release, bump `APP_VER` in `src/app1.js` and `VERSION` in `public/sw.js` so phones pick up the update.
 
-**Rename the app:** change `APP_NAME` in `src/app1.js`, the `<title>` in `build.py`, `public/manifest.json`, `public/privacy.html`, and `VERSION` in `public/sw.js`.
+**Rename the app:** change `APP_NAME` in `src/app1.js`, the `<title>` and Open Graph tags in `build.py`, `public/og.png`, `public/manifest.json`, `public/privacy.html`, and `VERSION` in `public/sw.js`.
 
 **Add a language:** copy the `en` block in `src/i18n.js`, translate it, and add the language to the `{tr, en}` objects in `src/content.js`. Have a native speaker check it.
 
@@ -55,7 +55,7 @@ No accounts, no cookies, no personal data. Everything is stored in the browser (
 
 ## Credits
 
-Built by Veli Kaan Kayhan. Grammar questions and lessons are original. Practice questions themselves come from College Board's free [Question Bank](https://satsuitequestionbank.collegeboard.org/) and [Bluebook](https://bluebook.collegeboard.org/); this app only links to them.
+Built by Veli Kaan Kayhan. Feedback: velikaankayhan@proton.me. Grammar questions and lessons are original. Practice questions themselves come from College Board's free [Question Bank](https://satsuitequestionbank.collegeboard.org/) and [Bluebook](https://bluebook.collegeboard.org/); this app only links to them.
 
 ## License
 
