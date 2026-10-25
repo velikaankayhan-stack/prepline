@@ -1,0 +1,269 @@
+<header>
+  <h1 id="appName"></h1>
+  <div class="sub" id="hdrSub"></div>
+  <button id="gPill" onclick="toggleGauge()"><b id="gScore">—</b><span id="gLbl">…</span></button>
+</header>
+
+<div id="gPanel" class="hide"></div>
+<button id="noteFab" onclick="toggleNotes()">+<i id="noteCnt" class="hide">0</i></button>
+<div id="notePanel" class="hide">
+  <h2 style="margin:0 0 4px" data-i="inb_title"></h2>
+  <p class="muted" style="margin:0" data-i="inb_hint"></p>
+  <div style="display:flex;gap:8px;margin-top:8px">
+    <input id="inbIn" data-ip="inb_ph" lang="en" spellcheck="true" autocapitalize="none" autocorrect="off" autocomplete="off"
+      onkeydown="if(event.key==='Enter'){event.preventDefault();addInbox();}" onpaste="inbPaste(event)">
+    <button onclick="addInbox()" style="flex:0 0 auto" data-i="add"></button>
+  </div>
+  <p class="muted" style="margin:6px 0 0;font-size:12px" data-i="inb_multi"></p>
+  <button id="inbGo" onclick="processInbox()" style="width:100%;margin-top:10px"></button>
+  <div id="noteList" style="margin-top:6px"></div>
+</div>
+
+<div id="ob" class="hide"><div class="obw" id="obBox"></div></div>
+
+<main>
+<section id="s-bugun" class="on">
+  <div id="memWarn" class="warn hide" data-i="mem_warn"></div>
+  <div class="card">
+    <h2 id="todayTitle"></h2>
+    <p class="muted" id="nextUp" style="margin:0 0 10px"></p>
+    <div class="stat">
+      <div><b id="stStreak">0</b><span data-i="st_streak"></span></div>
+      <div><b id="stDue">0</b><span data-i="st_due"></span></div>
+      <div><b id="stWords">0</b><span data-i="st_words"></span></div>
+      <div><b id="stDays">—</b><span data-i="st_days"></span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2><span data-i="h_tasks"></span> <span id="phaseLbl" class="muted" style="font-size:12.5px;font-weight:600"></span></h2>
+    <div id="taskList"></div>
+  </div>
+  <div class="card">
+    <h2 data-i="h_qlog"></h2>
+    <p class="muted" style="margin:0 0 6px" data-i="qlog_hint"></p>
+    <select id="qSk"></select>
+    <div class="row" style="margin-top:8px">
+      <div><label data-i="correct"></label><input id="qC" type="number" inputmode="numeric" min="0" placeholder="7"></div>
+      <div><label data-i="total"></label><input id="qN" type="number" inputmode="numeric" min="1" placeholder="10"></div>
+    </div>
+    <button class="primary" style="width:100%;margin-top:10px" onclick="addQlog()" data-i="save"></button>
+    <p class="muted" id="qToday" style="margin:8px 0 0;font-size:12.5px"></p>
+  </div>
+  <div class="card">
+    <h2 data-i="h_quick"></h2>
+    <div class="row">
+      <button class="primary" onclick="go('kelime');startReview()" data-i="quick_rev"></button>
+      <button onclick="go('hata')" data-i="quick_err"></button>
+    </div>
+  </div>
+</section>
+
+<section id="s-kelime">
+  <div class="seg">
+    <button id="segW" class="on" onclick="kwView('w')" data-i="seg_words"></button>
+    <button id="segR" onclick="kwView('r')" data-i="seg_roots"></button>
+  </div>
+  <div id="kwRoots" class="hide">
+    <div class="card">
+      <h2 data-i="r_new"></h2>
+      <div class="row">
+        <div><label data-i="r_root"></label><input id="rRoot" placeholder="cred" lang="en" autocapitalize="none" autocorrect="off" spellcheck="false"></div>
+        <div><label data-i="r_mean"></label><input id="rMean"></div>
+      </div>
+      <label><span data-i="r_orig"></span> <span style="font-weight:400" data-i="opt"></span></label>
+      <input id="rOrig" placeholder="Latin: credere">
+      <button class="primary" style="width:100%;margin-top:10px" onclick="addRoot()" data-i="r_save"></button>
+    </div>
+    <div class="card">
+      <h2><span data-i="r_mine"></span> (<span id="rCount">0</span>)</h2>
+      <input id="rSearch" data-ip="r_search" oninput="renderRoots()">
+      <div id="rootList"></div>
+    </div>
+  </div>
+  <div id="kwWords">
+    <div class="card">
+      <h2 data-i="rev_title"></h2>
+      <div id="revEmpty">
+        <p class="muted" id="revEmptyMsg"></p>
+        <button class="sm" onclick="startReview(true)" data-i="rev_all"></button>
+      </div>
+      <div id="revBox" class="hide">
+        <p class="muted" id="revCount"></p>
+        <div class="rev">
+          <div class="w" id="revWord"></div>
+          <div class="s" id="revSen"></div>
+          <div class="m hide" id="revMean"></div>
+        </div>
+        <button class="primary" id="revShow" style="width:100%" onclick="revealCard()" data-i="rev_show"></button>
+        <div class="hide" id="revGrade" style="margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <button onclick="gradeCard(0)" style="border-color:var(--bad)" data-i="g0"></button>
+          <button onclick="gradeCard(1)" style="border-color:var(--warn)" data-i="g1"></button>
+          <button onclick="gradeCard(2)" style="border-color:var(--ok)" data-i="g2"></button>
+          <button onclick="gradeCard(3)" style="border-color:var(--acc)" data-i="g3"></button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h2 data-i="w_new"></h2>
+      <label data-i="w_word"></label>
+      <div id="inbHint" class="hide" style="font-size:12.5px;color:var(--acc);font-weight:600;margin-bottom:6px"></div>
+      <input id="wWord" placeholder="hinder" lang="en" spellcheck="true" autocapitalize="none" autocorrect="off" autocomplete="off" oninput="checkDup()">
+      <div class="row" style="margin-top:8px">
+        <button class="sm" onclick="lookupWord()" data-i="w_dict"></button>
+        <button class="sm ghost" id="btnTureng" onclick="openTureng()" data-i="w_tureng"></button>
+      </div>
+      <label><span data-i="w_sen"></span> <span style="font-weight:400" data-i="w_sen_hint"></span></label>
+      <textarea id="wSen" lang="en" spellcheck="true" autocapitalize="none" autocorrect="off" placeholder="such concerns didn't ___ her efforts"></textarea>
+      <label data-i="w_mean"></label>
+      <input id="wMean">
+      <div id="dupBox" class="dup hide"></div>
+      <div id="dictOut" class="muted"></div>
+      <button class="primary" style="width:100%;margin-top:12px" id="btnSave" onclick="addWord()" data-i="save"></button>
+    </div>
+    <div class="card">
+      <h2><span data-i="w_mine"></span> (<span id="wCount">0</span>)</h2>
+      <input id="wSearch" data-ip="search" oninput="renderWords()">
+      <div id="wordList"></div>
+    </div>
+  </div>
+</section>
+
+<section id="s-hata">
+  <div class="card">
+    <h2 data-i="e_add"></h2>
+    <label data-i="e_sec"></label>
+    <div class="chips" id="chSec"></div>
+    <label data-i="e_dom"></label>
+    <select id="eDomain"></select>
+    <label data-i="e_why"></label>
+    <div class="chips" id="chCat"></div>
+    <label id="eTrRow" style="display:flex;align-items:center;gap:9px;margin-top:12px">
+      <input type="checkbox" id="eTr" style="width:22px;height:22px;min-height:0;flex:0 0 auto">
+      <span style="font-size:14px;color:var(--fg);font-weight:600" data-i="e_tr"></span>
+    </label>
+    <details style="margin-top:12px">
+      <summary data-i="e_detail"></summary>
+      <label data-i="e_no"></label>
+      <input id="eNo" placeholder="M2-16">
+      <label data-i="e_src"></label>
+      <input id="eSrc" placeholder="Practice 1">
+      <label data-i="e_note"></label>
+      <textarea id="eNote"></textarea>
+    </details>
+    <button class="primary" style="width:100%;margin-top:12px" onclick="addError()" data-i="save"></button>
+  </div>
+  <div class="card">
+    <h2 data-i="e_dist"></h2>
+    <div id="catDist"></div>
+    <h3 data-i="e_bydom"></h3>
+    <div id="domDist"></div>
+  </div>
+  <div class="card">
+    <h2><span data-i="e_recs"></span> (<span id="eCount">0</span>)</h2>
+    <div class="chips" id="chFilter"></div>
+    <div id="errList"></div>
+  </div>
+</section>
+
+<section id="s-ogren">
+  <div class="card">
+    <h2 data-i="gr_title"></h2>
+    <p class="muted" data-i="gr_hint"></p>
+    <div id="gramBox"></div>
+  </div>
+  <div class="card">
+    <h2 data-i="c_title"></h2>
+    <p class="muted" data-i="c_hint"></p>
+    <div class="bar"><i id="allBar" style="width:0%"></i></div>
+    <p class="muted" id="allProg" style="margin-top:8px"></p>
+    <div class="chips" id="chTr" style="margin-top:8px"></div>
+  </div>
+  <div id="currList"></div>
+</section>
+
+<section id="s-mat">
+  <div class="card">
+    <h2 data-i="m_title"></h2>
+    <p class="muted" id="mathInfo"></p>
+    <input id="mathQ" data-ip="m_search" oninput="renderMath()" lang="en" spellcheck="false" style="margin-top:8px">
+  </div>
+  <div id="mathList"></div>
+</section>
+
+<section id="s-ilerleme">
+  <div class="card">
+    <h2 data-i="p_tests"></h2>
+    <div class="scroll"><div id="chart"></div></div>
+    <div id="testList" style="margin-top:8px"></div>
+    <details style="margin-top:10px">
+      <summary data-i="p_add"></summary>
+      <label data-i="p_name"></label><input id="tName" placeholder="Practice 1">
+      <div class="row">
+        <div><label>R&amp;W</label><input id="tRw" type="number" inputmode="numeric" placeholder="600"></div>
+        <div><label>Math</label><input id="tMa" type="number" inputmode="numeric" placeholder="600"></div>
+      </div>
+      <label data-i="p_date"></label><input id="tDate" type="date">
+      <button class="primary" style="width:100%;margin-top:10px" onclick="addTest()" data-i="save"></button>
+    </details>
+  </div>
+  <div class="card">
+    <h2 data-i="p_skills"></h2>
+    <div id="skillTable"></div>
+  </div>
+  <div class="card" id="trCard">
+    <h2 data-i="p_tr"></h2>
+    <p class="muted" data-i="p_tr_hint"></p>
+    <div id="trStat"></div>
+  </div>
+  <div class="card">
+    <h2 data-i="s_title"></h2>
+    <label data-i="s_lang"></label>
+    <div class="chips" id="chLang"></div>
+    <label data-i="s_exam"></label>
+    <select id="examSel" onchange="examSelChange()"></select>
+    <input id="examDate" type="date" class="hide" onchange="saveExam(this.value)" style="margin-top:6px">
+    <label data-i="s_target"></label>
+    <div class="chips" id="chTarget"></div>
+    <label data-i="s_mins"></label>
+    <div class="chips" id="chMins"></div>
+    <label id="eslRow" style="display:flex;align-items:center;gap:9px;margin-top:12px">
+      <input type="checkbox" id="sEsl" onchange="setEsl(this.checked)" style="width:22px;height:22px;min-height:0;flex:0 0 auto">
+      <span style="font-size:14px;color:var(--fg);font-weight:600" data-i="s_esl"></span>
+    </label>
+    <label style="display:flex;align-items:center;gap:9px;margin-top:12px">
+      <input type="checkbox" id="sMath" onchange="setMathDrip(this.checked)" style="width:22px;height:22px;min-height:0;flex:0 0 auto">
+      <span style="font-size:14px;color:var(--fg);font-weight:600" data-i="s_mathdrip"></span>
+    </label>
+    <label data-i="s_rev"></label>
+    <div class="chips" id="chRev"></div>
+    <label data-i="s_new"></label>
+    <div class="chips" id="chNew"></div>
+    <p class="muted" style="margin-top:6px" data-i="s_lim_hint"></p>
+    <label data-i="s_theme"></label>
+    <div class="chips" id="chTheme"></div>
+    <h3 data-i="s_backup"></h3>
+    <div class="row">
+      <button onclick="exportData()" data-i="s_export"></button>
+      <button onclick="document.getElementById('impFile').click()" data-i="s_import"></button>
+    </div>
+    <input type="file" id="impFile" accept="application/json" class="hide" onchange="importData(this)">
+    <button class="ghost sm" style="margin-top:12px;color:var(--bad);border-color:var(--bad)" onclick="resetAll()" data-i="s_reset"></button>
+    <h3 data-i="s_about"></h3>
+    <div class="about">
+      <p id="verInfo"></p>
+      <p data-i="s_local"></p>
+      <p data-i="s_disc"></p>
+      <p><span id="srcWrap"><a id="srcLink" href="#" target="_blank" rel="noopener" data-i="s_src"></a> · </span><a href="privacy.html" target="_blank" rel="noopener" data-i="s_priv"></a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<nav>
+  <button onclick="go('bugun')" data-t="bugun"><span class="ic">◉</span><span data-i="nav_today"></span></button>
+  <button onclick="go('kelime')" data-t="kelime"><span class="ic">◆</span><span data-i="nav_words"></span></button>
+  <button onclick="go('hata')" data-t="hata"><span class="ic">✕</span><span data-i="nav_err"></span></button>
+  <button onclick="go('ogren')" data-t="ogren"><span class="ic">▤</span><span data-i="nav_learn"></span></button>
+  <button onclick="go('mat')" data-t="mat"><span class="ic">∫</span><span data-i="nav_math"></span></button>
+  <button onclick="go('ilerleme')" data-t="ilerleme"><span class="ic">▲</span><span data-i="nav_prog"></span></button>
+</nav>
