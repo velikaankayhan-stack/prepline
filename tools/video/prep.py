@@ -4,7 +4,7 @@ SES=sys.argv[1]; OUT=sys.argv[2]; FAKE='fake' in sys.argv[3:]; ONLY=[a for a in 
 s=open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','..','src','content.js')).read()
 A=json.loads(re.search(r'var GANIM=(\{.*?\});\n',s).group(1))
 G=json.loads(re.search(r'var GRAM=(\[.*?\]);\n',s).group(1))
-jobs=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'isler.json')))
+jobs=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'isler_en.json')))
 os.makedirs(OUT,exist_ok=True)
 def dur(p): return float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',p]).decode().strip())
 import numpy as np
@@ -69,11 +69,11 @@ for n,j in enumerate(jobs):
             for w in sg['t'].split(): ws.append({"o":o,"d":wl*0.9,"t":w});o+=wl
             json.dump(ws,open(js,'w'))
         words=[w for w in json.load(open(js,encoding='utf-8')) if w.get('k','WordBoundary')=='WordBoundary']
-        acr=sg['t'].replace(' ','') in ('S.A.T.',)
         wav=os.path.join(OUT,'_tmp_%s_%02d.wav'%(j['id'],i))
-        mp=process(mp3,wav,BASE_TEMPO*(1.15 if acr else 1.0))
-        D=dur(wav); disp='SAT' if acr else sg['t']
-        words=[{"t":"SAT","o":0,"d":D*1000}] if acr else tokens_with_times(sg['t'],words,mp)
+        mp=process(mp3,wav,BASE_TEMPO)
+        D=dur(wav); disp=sg['t'].replace('S.A.T.','SAT')
+        words=tokens_with_times(sg['t'],words,mp)
+        for w in words: w['t']=w['t'].replace('S.A.T.','SAT')
         mp3=wav
         if prev is not None:
             gap = 0.12 if sg['step']==prev['step'] else 0.60   # TR/EN geçişinde kısa nefes, adımlar arası net duraklama
@@ -82,7 +82,7 @@ for n,j in enumerate(jobs):
             if prev['step']==0 and sg['step']==1: gap=2.4   # düşünme payı: 3-2-1 sayacı
             t+=gap
         if sg['step']==5 and prev and prev['step']!=5: t+=0.2
-        segs.append({"t":disp,"l":sg['l'],"step":sg['step'],"start":round(t,3),"dur":round(D,3),"words":words,"file":mp3})
+        segs.append({"t":disp,"tr":sg.get('tr'),"l":sg['l'],"step":sg['step'],"start":round(t,3),"dur":round(D,3),"words":words,"file":mp3})
         t+=D; prev=sg
     total=t+1.3
     stepStart=[]
