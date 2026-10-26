@@ -8,7 +8,7 @@ jobs=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'isl
 os.makedirs(OUT,exist_ok=True)
 def dur(p): return float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',p]).decode().strip())
 import numpy as np
-SR=48000; BASE_TEMPO=1.0   # hızlandırma yok: doğal konuşma hızı
+SR=48000; BASE_TEMPO=0.92  # öğrenciler için biraz yavaş: ~170 kelime/dk (doğal hız ~185)
 MAX_PAUSE=0.35             # cümle içi/arası duraklama en fazla bu kadar kalır (sn)
 def process(mp3, out_wav, tempo):
     """Baş/son sessizliği kırp, uzun iç sessizlikleri MAX_PAUSE'a indir, sonra hızlandır. Zaman eşleme fonksiyonu döndürür."""
