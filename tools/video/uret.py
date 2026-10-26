@@ -28,7 +28,7 @@ async def one(text, path_mp3, path_json):
 
 async def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default="ses_en")
+    ap.add_argument("--out", default="ses_ingilizce")
     ap.add_argument("ids", nargs="*")
     a = ap.parse_args()
     out = os.path.join(HERE, a.out)

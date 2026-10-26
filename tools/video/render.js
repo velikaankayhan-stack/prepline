@@ -2,8 +2,7 @@
 const {chromium}=require('playwright');const fs=require('fs');const path=require('path');const {spawn}=require('child_process');
 const OUT=process.argv[2]; const only=process.argv.slice(3); const FPS=30;
 (async()=>{
-  const exe=fs.readdirSync('/opt/pw-browsers').filter(d=>d.startsWith('chromium-'))[0];
-  const b=await chromium.launch({executablePath:`/opt/pw-browsers/${exe}/chrome-linux/chrome`});
+  const b=await chromium.launch();
   const p=await b.newPage({viewport:{width:1080,height:1920}});
   await p.goto('file://'+path.resolve(__dirname,'frame.html'));
   const ids=fs.readdirSync(OUT).filter(f=>f.endsWith('.json')).map(f=>f.slice(0,-5)).filter(id=>!only.length||only.includes(id)).sort();
