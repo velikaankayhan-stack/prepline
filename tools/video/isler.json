@@ -1,0 +1,1555 @@
+[
+{
+"id": "01_b1",
+"rule": "b1",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "The museum closed early, the storm had cut the power.",
+"l": "en",
+"step": 0
+},
+{
+"t": "Bu cümlede iki parça var. İkisinin de öznesi ve yüklemi var. Yani ikisi de tek başına tam bir cümle.",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Aralarında sadece virgül var. Virgül iki tam cümleyi bağlayamaz. Buna",
+"l": "tr",
+"step": 2
+},
+{
+"t": "comma splice",
+"l": "en",
+"step": 2
+},
+{
+"t": "denir ve",
+"l": "tr",
+"step": 2
+},
+{
+"t": "S. A. T.",
+"l": "en",
+"step": 2
+},
+{
+"t": "bunu çok sorar.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Çözüm: noktalı virgül, nokta, ya da virgül artı",
+"l": "tr",
+"step": 3
+},
+{
+"t": "and, but, so",
+"l": "en",
+"step": 3
+},
+{
+"t": "gibi bir bağlaç.",
+"l": "tr",
+"step": 3
+},
+{
+"t": "The museum closed early; the storm had cut the power.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca: iki tam cümle, tek bir virgülle birleşmez.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "02_b2",
+"rule": "b2",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "The trail is short but, it climbs steeply.",
+"l": "en",
+"step": 0
+},
+{
+"t": "İki tam cümle,",
+"l": "tr",
+"step": 1
+},
+{
+"t": "but",
+"l": "en",
+"step": 1
+},
+{
+"t": "bağlacıyla birleşiyor.",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Virgül yanlış yerde. Bağlacın arkasına konmuş.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Doğrusu: virgül bağlacın önüne gelir. Önce virgül, sonra",
+"l": "tr",
+"step": 3
+},
+{
+"t": "but",
+"l": "en",
+"step": 3
+},
+{
+"t": ".",
+"l": "tr",
+"step": 3
+},
+{
+"t": "The trail is short, but it climbs steeply.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca: iki tam cümleyi",
+"l": "tr",
+"step": 4
+},
+{
+"t": "and, but, so, yet, or",
+"l": "en",
+"step": 4
+},
+{
+"t": "ile bağlarken virgül bağlaçtan önce gelir.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "03_b3",
+"rule": "b3",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "The recipe needs: flour, water, and salt.",
+"l": "en",
+"step": 0
+},
+{
+"t": "İki noktadan önceki kısma bak:",
+"l": "tr",
+"step": 1
+},
+{
+"t": "The recipe needs.",
+"l": "en",
+"step": 1
+},
+{
+"t": "Neye ihtiyaç var? Cümle yarım kalmış.",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Yarım cümleden sonra iki nokta konmaz.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Önce cümleyi tamamla:",
+"l": "tr",
+"step": 3
+},
+{
+"t": "The recipe needs three ingredients.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Artık tam cümle, iki nokta koyabiliriz.",
+"l": "tr",
+"step": 3
+},
+{
+"t": "The recipe needs three ingredients: flour, water, and salt.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca: iki noktadan önce, tek başına tam bir cümle olmalı.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "04_b4",
+"rule": "b4",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "Because the soil was dry; the farmers waited.",
+"l": "en",
+"step": 0
+},
+{
+"t": "İlk kısım",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Because",
+"l": "en",
+"step": 1
+},
+{
+"t": "ile başlıyor. Bu bir yan cümle. Tek başına cümle olamaz.",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Noktalı virgül nokta gibidir. İki yanında da tam cümle ister. Burada sol taraf tam değil.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Yan cümleden sonra virgül kullanılır.",
+"l": "tr",
+"step": 3
+},
+{
+"t": "Because the soil was dry, the farmers waited.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca: noktalı virgülün iki tarafı da tam cümle olmalı.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "05_b5",
+"rule": "b5",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "Kepler—who studied planets, was also an astrologer.",
+"l": "en",
+"step": 0
+},
+{
+"t": "Ortadaki",
+"l": "tr",
+"step": 1
+},
+{
+"t": "who studied planets",
+"l": "en",
+"step": 1
+},
+{
+"t": "kısmı ek bilgi. Cümleden çıkarsan cümle yine tam kalır.",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Ek bilgi tireyle açılmış ama virgülle kapanmış. Çift uyuşmuyor.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Tireyle açtıysan tireyle kapatırsın. Virgülle açtıysan virgülle.",
+"l": "tr",
+"step": 3
+},
+{
+"t": "Kepler—who studied planets— was also an astrologer.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca: ek bilgi bir çift işaretle açılır ve aynı işaretle kapanır.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "06_b6",
+"rule": "b6",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "The comedian, Jemaine Clement, voiced the crab.",
+"l": "en",
+"step": 0
+},
+{
+"t": "Sadece",
+"l": "tr",
+"step": 1
+},
+{
+"t": "the comedian",
+"l": "en",
+"step": 1
+},
+{
+"t": "dersek hangi komedyen olduğunu bilemeyiz. İsim, kim olduğunu belirliyor.",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Belirleyici bilgi gerekli bilgidir. Virgüllerle ayrılmaz.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Virgülleri kaldırıyoruz. İsim özneye yapışıyor.",
+"l": "tr",
+"step": 3
+},
+{
+"t": "The comedian Jemaine Clement voiced the crab.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca: kimden bahsedildiğini belirleyen bilgi virgülsüz yazılır.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "That",
+"l": "en",
+"step": 4
+},
+{
+"t": "ile başlayan kısım da her zaman virgülsüz.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "07_b7",
+"rule": "b7",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "The scientists who studied the samples, concluded that the rocks were volcanic.",
+"l": "en",
+"step": 0
+},
+{
+"t": "Özne uzun:",
+"l": "tr",
+"step": 1
+},
+{
+"t": "the scientists who studied the samples.",
+"l": "en",
+"step": 1
+},
+{
+"t": "Uzun olunca araya virgül koymak cazip geliyor.",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Ama özne ile yüklemin arasına hiçbir noktalama girmez.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Virgülü siliyoruz. Özne doğrudan yükleme bağlanır.",
+"l": "tr",
+"step": 3
+},
+{
+"t": "The scientists who studied the samples concluded that the rocks were volcanic.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca: özne ile yüklem, yüklem ile nesne arasında noktalama yok.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "08_b8",
+"rule": "b8",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "They asked how could the lake be saved?",
+"l": "en",
+"step": 0
+},
+{
+"t": "They asked how.",
+"l": "en",
+"step": 1
+},
+{
+"t": "Bu doğrudan bir soru değil, bir sorunun aktarılması. Buna dolaylı soru denir.",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Dolaylı soruda soru sırası kullanılmaz ve soru işareti konmaz.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Normal cümle sırası:",
+"l": "tr",
+"step": 3
+},
+{
+"t": "the lake could.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Sonuna da nokta.",
+"l": "tr",
+"step": 3
+},
+{
+"t": "They asked how the lake could be saved.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca:",
+"l": "tr",
+"step": 4
+},
+{
+"t": "asked how, wondered why, whether",
+"l": "en",
+"step": 4
+},
+{
+"t": "ile gelen kısım düz cümle sırasıyla yazılır ve nokta ile biter.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "09_b9",
+"rule": "b9",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "After the storm passed the crew repaired the roof.",
+"l": "en",
+"step": 0
+},
+{
+"t": "Cümle",
+"l": "tr",
+"step": 1
+},
+{
+"t": "after the storm passed",
+"l": "en",
+"step": 1
+},
+{
+"t": "diye bir girişle başlıyor. Asıl cümle:",
+"l": "tr",
+"step": 1
+},
+{
+"t": "the crew repaired the roof.",
+"l": "en",
+"step": 1
+},
+{
+"t": "Girişin bittiği yerde bir işaret eksik.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Girişten sonra virgül koyuyoruz.",
+"l": "tr",
+"step": 3
+},
+{
+"t": "After the storm passed, the crew repaired the roof.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca:",
+"l": "tr",
+"step": 4
+},
+{
+"t": "after, although, because",
+"l": "en",
+"step": 4
+},
+{
+"t": "ya da",
+"l": "tr",
+"step": 4
+},
+{
+"t": "to",
+"l": "en",
+"step": 4
+},
+{
+"t": "ile başlayan girişten sonra virgül gelir.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "10_b10",
+"rule": "b10",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "The kit includes, a map, a compass, and a whistle.",
+"l": "en",
+"step": 0
+},
+{
+"t": "Burada üç öğeli bir liste var:",
+"l": "tr",
+"step": 1
+},
+{
+"t": "a map, a compass, a whistle.",
+"l": "en",
+"step": 1
+},
+{
+"t": "Listenin ilk öğesinden önce virgül konmuş. Bu yanlış.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Öğelerin arasına virgül koy, ama ilk öğeden önce koyma.",
+"l": "tr",
+"step": 3
+},
+{
+"t": "The kit includes a map, a compass, and a whistle.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca: liste öğelerini virgülle ayır. Listeye girerken virgül yok.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "11_f1",
+"rule": "f1",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "The collection of ancient coins are displayed.",
+"l": "en",
+"step": 0
+},
+{
+"t": "Ne sergileniyor? Koleksiyon. Gerçek özne",
+"l": "tr",
+"step": 1
+},
+{
+"t": "collection",
+"l": "en",
+"step": 1
+},
+{
+"t": ", yani tekil.",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Araya giren",
+"l": "tr",
+"step": 2
+},
+{
+"t": "of ancient coins",
+"l": "en",
+"step": 2
+},
+{
+"t": "çoğul olduğu için",
+"l": "tr",
+"step": 2
+},
+{
+"t": "are",
+"l": "en",
+"step": 2
+},
+{
+"t": "yazılmış. Tuzak bu.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Araya gireni yok say, özneye bak:",
+"l": "tr",
+"step": 3
+},
+{
+"t": "the collection is.",
+"l": "en",
+"step": 3
+},
+{
+"t": "The collection of ancient coins is displayed.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca:",
+"l": "tr",
+"step": 4
+},
+{
+"t": "of",
+"l": "en",
+"step": 4
+},
+{
+"t": "ile başlayan kısmı yok say, yüklemi gerçek özneye uydur.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "12_f2",
+"rule": "f2",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "Using public domain songs ensure that the film is legal.",
+"l": "en",
+"step": 0
+},
+{
+"t": "Öznenin başında",
+"l": "tr",
+"step": 1
+},
+{
+"t": "using",
+"l": "en",
+"step": 1
+},
+{
+"t": "var. Yani özne bir eylem: şarkıları kullanmak.",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Songs",
+"l": "en",
+"step": 2
+},
+{
+"t": "çoğul diye",
+"l": "tr",
+"step": 2
+},
+{
+"t": "ensure",
+"l": "en",
+"step": 2
+},
+{
+"t": "yazılmış. Ama özne tek bir eylem.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Tekil yüklem kullanıyoruz:",
+"l": "tr",
+"step": 3
+},
+{
+"t": "ensures.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Using public domain songs ensures that the film is legal.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca:",
+"l": "tr",
+"step": 4
+},
+{
+"t": "ing",
+"l": "en",
+"step": 4
+},
+{
+"t": "ya da",
+"l": "tr",
+"step": 4
+},
+{
+"t": "to",
+"l": "en",
+"step": 4
+},
+{
+"t": "ile başlayan özne tekildir.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "13_f3",
+"rule": "f3",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "The committee released their report.",
+"l": "en",
+"step": 0
+},
+{
+"t": "The committee",
+"l": "en",
+"step": 1
+},
+{
+"t": ", yani kurul. İçinde çok kişi olsa da tek bir grup. Tekil.",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Their",
+"l": "en",
+"step": 2
+},
+{
+"t": "çoğul zamir. Tekil isme uymaz.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Tekil isim için",
+"l": "tr",
+"step": 3
+},
+{
+"t": "its",
+"l": "en",
+"step": 3
+},
+{
+"t": "kullanıyoruz.",
+"l": "tr",
+"step": 3
+},
+{
+"t": "The committee released its report.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca: zamir, yerini tuttuğu isimle sayıca aynı olmalı.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Company, team, committee",
+"l": "en",
+"step": 4
+},
+{
+"t": "için",
+"l": "tr",
+"step": 4
+},
+{
+"t": "it",
+"l": "en",
+"step": 4
+},
+{
+"t": "ve",
+"l": "tr",
+"step": 4
+},
+{
+"t": "its.",
+"l": "en",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "14_f4",
+"rule": "f4",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "The octopus can change it's color.",
+"l": "en",
+"step": 0
+},
+{
+"t": "Burada ahtapotun rengi kastediliyor. Yani sahiplik var.",
+"l": "tr",
+"step": 1
+},
+{
+"t": "It's",
+"l": "en",
+"step": 2
+},
+{
+"t": ", yani",
+"l": "tr",
+"step": 2
+},
+{
+"t": "it is.",
+"l": "en",
+"step": 2
+},
+{
+"t": "It is color",
+"l": "en",
+"step": 2
+},
+{
+"t": "anlamsız.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Sahiplik için kesme işaretsiz",
+"l": "tr",
+"step": 3
+},
+{
+"t": "its.",
+"l": "en",
+"step": 3
+},
+{
+"t": "The octopus can change its color.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca:",
+"l": "tr",
+"step": 4
+},
+{
+"t": "its",
+"l": "en",
+"step": 4
+},
+{
+"t": "onun demek,",
+"l": "tr",
+"step": 4
+},
+{
+"t": "it's",
+"l": "en",
+"step": 4
+},
+{
+"t": "ise",
+"l": "tr",
+"step": 4
+},
+{
+"t": "it is.",
+"l": "en",
+"step": 4
+},
+{
+"t": "Their",
+"l": "en",
+"step": 4
+},
+{
+"t": "onların,",
+"l": "tr",
+"step": 4
+},
+{
+"t": "there",
+"l": "en",
+"step": 4
+},
+{
+"t": "orada,",
+"l": "tr",
+"step": 4
+},
+{
+"t": "they're",
+"l": "en",
+"step": 4
+},
+{
+"t": "ise",
+"l": "tr",
+"step": 4
+},
+{
+"t": "they are.",
+"l": "en",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "15_f5",
+"rule": "f5",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "Place your hand's on the table.",
+"l": "en",
+"step": 0
+},
+{
+"t": "Burada eller hiçbir şeye sahip değil. Sadece çoğul.",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Kesme işareti sahiplik gösterir. Sahiplik yoksa konmaz.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Sadece s ekliyoruz:",
+"l": "tr",
+"step": 3
+},
+{
+"t": "hands.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Place your hands on the table.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca: tekil sahiplikte kesme ve s, çoğulda sadece s, çoğul sahiplikte s ve kesme.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "16_f6",
+"rule": "f6",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "In 2023, the team publishing a study.",
+"l": "en",
+"step": 0
+},
+{
+"t": "Özne",
+"l": "tr",
+"step": 1
+},
+{
+"t": "the team.",
+"l": "en",
+"step": 1
+},
+{
+"t": "Peki takım ne yaptı?",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Publishing",
+"l": "en",
+"step": 2
+},
+{
+"t": "tek başına yüklem olamaz. Cümle yarım kalıyor.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Çekimli bir yüklem lazım:",
+"l": "tr",
+"step": 3
+},
+{
+"t": "published.",
+"l": "en",
+"step": 3
+},
+{
+"t": "In 2023, the team published a study.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca: her cümlenin çekimli bir yüklemi olmalı.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "ing",
+"l": "en",
+"step": 4
+},
+{
+"t": ",",
+"l": "tr",
+"step": 4
+},
+{
+"t": "to",
+"l": "en",
+"step": 4
+},
+{
+"t": "ve",
+"l": "tr",
+"step": 4
+},
+{
+"t": "having",
+"l": "en",
+"step": 4
+},
+{
+"t": "tek başına yetmez.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "17_f7",
+"rule": "f7",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "A decade later, Land uses the filter.",
+"l": "en",
+"step": 0
+},
+{
+"t": "A decade later",
+"l": "en",
+"step": 1
+},
+{
+"t": ", geçmişte olmuş bir olayı anlatıyor. Metin geçmiş zamanda.",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Uses",
+"l": "en",
+"step": 2
+},
+{
+"t": "geniş zaman. Metnin zamanıyla uyuşmuyor.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Geçmiş zaman kullanıyoruz:",
+"l": "tr",
+"step": 3
+},
+{
+"t": "used.",
+"l": "en",
+"step": 3
+},
+{
+"t": "A decade later, Land used the filter.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca: zaman ipucunu bul.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "In 1939",
+"l": "en",
+"step": 4
+},
+{
+"t": "geçmiş zaman,",
+"l": "tr",
+"step": 4
+},
+{
+"t": "each night",
+"l": "en",
+"step": 4
+},
+{
+"t": "geniş zaman,",
+"l": "tr",
+"step": 4
+},
+{
+"t": "by the time",
+"l": "en",
+"step": 4
+},
+{
+"t": "ise",
+"l": "tr",
+"step": 4
+},
+{
+"t": "had.",
+"l": "en",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+},
+{
+"id": "18_f8",
+"rule": "f8",
+"seg": [
+{
+"t": "Bu cümlede bir hata var. Görebiliyor musun?",
+"l": "tr",
+"step": 0
+},
+{
+"t": "Using a telescope, a comet was spotted.",
+"l": "en",
+"step": 0
+},
+{
+"t": "Using a telescope",
+"l": "en",
+"step": 1
+},
+{
+"t": ", yani teleskop kullanarak. Peki teleskobu kim kullanıyor?",
+"l": "tr",
+"step": 1
+},
+{
+"t": "Virgülden hemen sonra",
+"l": "tr",
+"step": 2
+},
+{
+"t": "a comet",
+"l": "en",
+"step": 2
+},
+{
+"t": "gelmiş. Kuyruklu yıldız teleskop kullanamaz.",
+"l": "tr",
+"step": 2
+},
+{
+"t": "Virgülden sonra işi yapan kişi gelmeli:",
+"l": "tr",
+"step": 3
+},
+{
+"t": "the astronomer.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Using a telescope, the astronomer spotted a comet.",
+"l": "en",
+"step": 3
+},
+{
+"t": "Kısaca: giriş ifadesinden sonra, virgülün hemen arkasına o işi yapan gelir.",
+"l": "tr",
+"step": 4
+},
+{
+"t": "Her gün bir kural, ücretsiz alıştırmalarla:",
+"l": "tr",
+"step": 5
+},
+{
+"t": "Scorepath.",
+"l": "en",
+"step": 5
+},
+{
+"t": "Link profilde.",
+"l": "tr",
+"step": 5
+}
+]
+}
+]

@@ -1,0 +1,94 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0b1530;font-family:Inter,"DejaVu Sans",sans-serif;color:#fff}
+#bg{position:absolute;inset:0;background:radial-gradient(1200px 900px at 20% 0%,#2a5bd7 0%,#13275e 45%,#0b1530 100%)}
+#top{position:absolute;top:120px;left:72px;right:72px;display:flex;align-items:center;gap:22px}
+#top .logo{width:88px;height:88px;border-radius:22px;background:#2255c8;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+#top .brand{font-weight:800;font-size:44px;letter-spacing:-.5px}
+#top .tag{margin-left:auto;font-weight:700;font-size:32px;background:rgba(255,255,255,.14);padding:12px 24px;border-radius:999px}
+#title{position:absolute;top:290px;left:72px;right:72px;font-weight:800;font-size:58px;line-height:1.15;letter-spacing:-.8px}
+#stage{position:absolute;top:560px;left:56px;right:56px;background:#fff;color:#141821;border-radius:44px;padding:70px 56px 60px;box-shadow:0 30px 80px rgba(0,0,0,.4);min-height:520px}
+#sent{font-size:68px;line-height:1.55;font-weight:600;letter-spacing:-.3px}
+#sent span{border-radius:10px}
+#sent span[class]:not([class=""]){padding:0 4px}
+.gA{background:rgba(47,124,246,.20);box-shadow:inset 0 -8px 0 #2f7cf6}
+.gB{background:rgba(155,93,229,.20);box-shadow:inset 0 -8px 0 #9b5de5}
+.gC{background:rgba(224,154,36,.24);box-shadow:inset 0 -8px 0 #e09a24}
+.gX{color:#fff;background:#e5484d;display:inline-block;padding:0 10px!important}
+.gF{color:#fff;background:#1d9a57;display:inline-block;padding:0 10px!important}
+#labs{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px}
+.lab{font-size:32px;font-weight:700;padding:10px 22px;border-radius:999px}
+.lab.gA{box-shadow:none;color:#1d4fb8}.lab.gB{box-shadow:none;color:#6b35b8}.lab.gC{box-shadow:none;color:#9a6200}
+#badge{position:absolute;top:-34px;right:48px;font-size:40px;font-weight:800;padding:12px 30px;border-radius:999px;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+#sum div{font-size:40px;line-height:1.4;padding:18px 26px;border-radius:20px;margin-top:20px;font-weight:600}
+#sum .bad{border:4px solid #e5484d;text-decoration:line-through;text-decoration-color:#e5484d;color:#555}
+#sum .ok{border:4px solid #1d9a57}
+#cap{position:absolute;left:64px;right:64px;top:1240px;text-align:center;font-weight:800;font-size:56px;line-height:1.3;text-shadow:0 4px 16px rgba(0,0,0,.5)}
+#cap .w{opacity:.55}#cap .w.on{opacity:1;color:#ffd166}#cap .w.done{opacity:1}
+#cap .en{font-style:italic}
+#bar{position:absolute;left:72px;right:72px;bottom:150px;height:12px;border-radius:6px;background:rgba(255,255,255,.18)}
+#bar i{display:block;height:100%;border-radius:6px;background:#ffd166}
+#outro{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(1200px 900px at 50% 30%,#2a5bd7 0%,#13275e 55%,#0b1530 100%)}
+#outro .big{font-size:120px;font-weight:900;letter-spacing:-2px;margin-top:40px}
+#outro .s1{font-size:50px;font-weight:700;margin-top:24px;opacity:.95}
+#outro .s2{font-size:44px;font-weight:800;margin-top:70px;background:#ffd166;color:#13275e;padding:22px 46px;border-radius:999px}
+#outro .s3{font-size:34px;margin-top:40px;opacity:.75}
+</style></head><body>
+<div id="bg"></div>
+<div id="top"><img src="logo.png" style="width:88px;height:88px;border-radius:22px;box-shadow:0 8px 30px rgba(0,0,0,.35)">
+ <div class="brand">Scorepath</div><div class="tag" id="tag"></div></div>
+<div id="title"></div>
+<div id="stage"><div id="badge" style="display:none"></div><div id="sent"></div><div id="labs"></div><div id="sum"></div></div>
+<div id="cap"></div>
+<div id="think" style="display:none;position:absolute;left:0;right:0;top:1200px;text-align:center"><div id="cnt" style="font-size:150px;font-weight:900;color:#ffd166;line-height:1"></div><div style="font-size:50px;font-weight:800;margin-top:20px">Hatayı buldun mu? Yorumlara yaz 👇</div></div>
+<div id="bar"><i id="barI"></i></div>
+<div id="outro"><img src="logo.png" style="width:220px;height:220px;border-radius:56px;box-shadow:0 20px 60px rgba(0,0,0,.4)">
+ <div class="big">Scorepath</div><div class="s1">SAT'e Türkçe hazırlık<br>Her gün 1 kural · ücretsiz</div><div class="s2">Link profilde</div><div class="s3">🔖 Kaydet, sınavdan önce tekrar et</div><div class="s3" style="margin-top:14px">Hesap yok · reklam yok</div></div>
+<script>
+var D=null;
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function ease(x){x=Math.max(0,Math.min(1,x));return 1-Math.pow(1-x,3);}
+function sentHtml(parts,mode,tin){
+  return parts.map(function(p){
+    var tag=p[1],cls="",st="";
+    if(mode>=1&&/[ABC]/.test(tag)) cls="g"+tag;
+    var tx=esc(p[0]);
+    if(tag==="X"){ if(mode>=2){ cls="gX"; var sh=Math.sin(tin*40)*14*Math.max(0,1-tin/0.9); st='transform:translateX('+sh.toFixed(1)+'px)'; if(!p[0]) tx="^"; } else if(!p[0]) tx=""; }
+    if(tag==="F"){ cls="gF"; var k=ease(tin/0.45); st='transform:scale('+(0.3+0.7*k+0.25*Math.sin(Math.PI*Math.min(1,tin/0.45))).toFixed(3)+');opacity:'+k.toFixed(2); }
+    return '<span class="'+cls+'" style="'+st+'">'+tx+'</span>';
+  }).join("");
+}
+function render(t){
+  var s=0; for(var i=0;i<D.stepStart.length;i++) if(t>=D.stepStart[i]) s=i;
+  var tin=t-D.stepStart[s];
+  document.getElementById("tag").textContent="SAT gramer #"+D.num;
+  document.getElementById("title").textContent=D.title;
+  var outro=document.getElementById("outro"); outro.style.display=s>=5?"flex":"none";
+  if(s>=5){ outro.style.opacity=ease(tin/0.4); }
+  var parts=s>=3?D.ok:D.bad, mode=s>=3?3:s;
+  document.getElementById("sent").innerHTML=sentHtml(parts,mode,tin);
+  var labs=""; if(s>=1&&s<=3) ["A","B","C"].forEach(function(k){ if(D.lab[k]) labs+='<span class="lab g'+k+'">'+esc(D.lab[k])+'</span>'; });
+  var L=document.getElementById("labs"); L.innerHTML=labs; L.style.opacity=s===1?ease(tin/0.4):1;
+  var b=document.getElementById("badge");
+  if(s===2){b.style.display="block";b.style.background="#e5484d";b.textContent="✗ yanlış";b.style.transform="scale("+(0.6+0.4*ease(tin/0.3))+")";}
+  else if(s===3||s===4){b.style.display="block";b.style.background="#1d9a57";b.textContent="✓ doğru";b.style.transform="scale("+(s===3?0.6+0.4*ease(tin/0.3):1)+")";}
+  else b.style.display="none";
+  document.getElementById("sum").innerHTML=s===4?'<div class="bad">✗ '+esc(D.badT)+'</div><div class="ok">✓ '+esc(D.okT)+'</div>':'';
+  document.getElementById("sum").style.opacity=s===4?ease(tin/0.4):1;
+  document.getElementById("sent").style.display=s===4?"none":"block";
+  /* altyazı: geçerli parça, kelime vurgusu */
+  var cur=null; for(var j=0;j<D.segs.length;j++){ var g=D.segs[j]; if(t>=g.start-0.05 && t<g.start+g.dur+0.25) cur=g; }
+  var th=document.getElementById("think"), inThink=D.think!=null && t>=D.think && t<D.stepStart[1];
+  th.style.display=inThink?"block":"none";
+  if(inThink) document.getElementById("cnt").textContent=String(Math.max(1,3-Math.floor((t-D.think)/((D.stepStart[1]-D.think)/3))));
+  var cap=document.getElementById("cap");
+  if(cur && s<5 && !inThink){
+    var lt=(t-cur.start)*1000, ws=cur.words, h="";
+    if(ws.length){ h=ws.map(function(w){ var c=lt>=w.o+w.d?"w done":(lt>=w.o?"w on":"w"); return '<span class="'+c+'">'+esc(w.t)+'</span>'; }).join(" "); }
+    else h=esc(cur.t);
+    cap.innerHTML='<span class="'+(cur.l==="en"?"en":"")+'">'+h+'</span>';
+  } else cap.innerHTML="";
+  document.getElementById("barI").style.width=(Math.min(1,t/D.total)*100).toFixed(2)+"%";
+}
+</script></body></html>
