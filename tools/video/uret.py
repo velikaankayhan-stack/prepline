@@ -1,20 +1,22 @@
 # Scorepath - video seslerini uretir. Her parca ayri okunur, sonra zip olusturulur.
-# Kullanim: python uret.py [--tr lang|ahmet] [--out klasor] [id ...]
-#   --tr lang  : Andrew Multilingual, Turkce parcalar SSML'de tr-TR olarak isaretlenir (varsayilan)
-#   --tr ahmet : Turkce parcalari tr-TR-AhmetNeural okur, Ingilizceleri Andrew
-import argparse, asyncio, json, os, re, zipfile
+# Kullanim: python uret.py [--tr emel|speak] [--en ava|andrew] [--out klasor] [id ...]
+#   --tr emel  : Turkce parcalari tr-TR-EmelNeural okur (varsayilan; ana dili Turkce)
+#   --tr speak : Turkce parcalari da Ingilizce ses okur, SSML dili tr-TR yapilir
+#   --en       : Ingilizce parcalarin sesi (ava = AvaMultilingual, andrew = AndrewMultilingual)
+# Not: tr-TR-AhmetNeural su an ses dondurmuyor; <lang> etiketi de servis tarafindan reddediliyor.
+import argparse, asyncio, json, os, zipfile
 import edge_tts
 import edge_tts.communicate as ecom
 
-VOICE_EN = "en-US-AndrewMultilingualNeural"
-VOICE_TR = "tr-TR-AhmetNeural"
+VOICE_EN = {"ava": "en-US-AvaMultilingualNeural", "andrew": "en-US-AndrewMultilingualNeural"}
+VOICE_TR = "tr-TR-EmelNeural"
 RATE = "+0%"   # hizlandirma yok; tempo prep.py'de ayarlanir
 LOCALE = {"tr": "tr-TR", "en": "en-US"}
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 # edge-tts SSML'i her zaman xml:lang='en-US' ile kurar. Multilingual ses dili kendisi tahmin eder ve
 # kisa Turkce parcalari ("ise", "denir ve", "Kisaca:") Ingilizce sanip Ingilizce aksanla okur.
-# Bu yuzden her parcanin dilini SSML'e acikca yaziyoruz.
+# --tr speak modunda her parcanin dilini SSML'e yaziyoruz.
 _orig_mkssml = ecom.mkssml
 _lang = {"v": None}
 
@@ -23,9 +25,7 @@ def _mkssml(tc, escaped_text):
     loc = _lang["v"]
     if not loc:
         return s
-    s = s.replace("xml:lang='en-US'", "xml:lang='%s'" % loc, 1)
-    s = re.sub(r"(<prosody[^>]*>)", r"\1<lang xml:lang='%s'>" % loc, s, count=1)
-    return s.replace("</prosody>", "</lang></prosody>", 1)
+    return s.replace("xml:lang='en-US'", "xml:lang='%s'" % loc, 1)
 
 ecom.mkssml = _mkssml
 
@@ -49,7 +49,8 @@ async def one(text, voice, loc, path_mp3, path_json):
 
 async def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--tr", choices=["lang", "ahmet"], default="lang")
+    ap.add_argument("--tr", choices=["emel", "speak"], default="emel")
+    ap.add_argument("--en", choices=["ava", "andrew"], default="ava")
     ap.add_argument("--out", default="ses_v2")
     ap.add_argument("ids", nargs="*")
     a = ap.parse_args()
@@ -66,8 +67,8 @@ async def main():
             if os.path.exists(mp3) and os.path.getsize(mp3) > 0 and os.path.exists(js):
                 continue
             tr = s["l"] == "tr"
-            voice = VOICE_TR if (tr and a.tr == "ahmet") else VOICE_EN
-            loc = LOCALE[s["l"]] if a.tr == "lang" else None
+            voice = VOICE_TR if (tr and a.tr == "emel") else VOICE_EN[a.en]
+            loc = LOCALE[s["l"]] if a.tr == "speak" else None
             for attempt in range(3):
                 try:
                     await one(s["t"], voice, loc, mp3, js); break
