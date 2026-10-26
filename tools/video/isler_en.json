@@ -1,0 +1,1094 @@
+[
+ {
+  "id": "01_b1",
+  "rule": "b1",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "The museum closed early, the storm had cut the power.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "This sentence has two parts, and each one has its own subject and verb.",
+    "tr": "Bu cümlede iki parça var, ikisinin de öznesi ve yüklemi var.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "So each part is a complete sentence on its own.",
+    "tr": "Yani ikisi de tek başına tam bir cümle.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "Only a comma sits between them, and a comma can't join two complete sentences.",
+    "tr": "Aralarında sadece virgül var. Virgül iki tam cümleyi bağlayamaz.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "This is called a comma splice, and the S.A.T. loves to test it.",
+    "tr": "Buna \"comma splice\" denir ve SAT bunu çok sorar.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "The fix: a semicolon, a period, or a comma plus \"and\", \"but\", or \"so\".",
+    "tr": "Çözüm: noktalı virgül, nokta ya da virgül + and, but, so gibi bir bağlaç.",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "The museum closed early; the storm had cut the power.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: two complete sentences can't be joined by a comma alone.",
+    "tr": "Kısaca: iki tam cümle, tek bir virgülle birleşmez.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "02_b2",
+  "rule": "b2",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "The trail is short but, it climbs steeply.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "Two complete sentences are joined with \"but\".",
+    "tr": "İki tam cümle \"but\" bağlacıyla birleşiyor.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "The comma is in the wrong place. It comes after the conjunction.",
+    "tr": "Virgül yanlış yerde. Bağlacın arkasına konmuş.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "The comma goes before the conjunction. First the comma, then \"but\".",
+    "tr": "Doğrusu: önce virgül, sonra \"but\".",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "The trail is short, but it climbs steeply.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: when you join two sentences with \"and\", \"but\", \"so\", \"yet\", or \"or\", the comma comes first.",
+    "tr": "Kısaca: iki tam cümleyi and, but, so, yet, or ile bağlarken virgül bağlaçtan önce gelir.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "03_b3",
+  "rule": "b3",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "The recipe needs: flour, water, and salt.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "Look at the part before the colon: \"The recipe needs.\" Needs what? The sentence is unfinished.",
+    "tr": "İki noktadan önceki kısma bak: \"The recipe needs.\" Neye ihtiyaç var? Cümle yarım kalmış.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "A colon can't come after an incomplete sentence.",
+    "tr": "Yarım cümleden sonra iki nokta konmaz.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "First complete the sentence: \"The recipe needs three ingredients.\" Now we can add the colon.",
+    "tr": "Önce cümleyi tamamla. Artık tam cümle, iki nokta koyabiliriz.",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "The recipe needs three ingredients: flour, water, and salt.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: what comes before a colon must be a complete sentence.",
+    "tr": "Kısaca: iki noktadan önce, tek başına tam bir cümle olmalı.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "04_b4",
+  "rule": "b4",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "Because the soil was dry; the farmers waited.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "The first part starts with \"because\". It's a dependent clause, so it can't stand alone.",
+    "tr": "İlk kısım \"because\" ile başlıyor. Bu bir yan cümle, tek başına cümle olamaz.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "A semicolon works like a period. It needs a complete sentence on both sides, and the left side isn't complete.",
+    "tr": "Noktalı virgül nokta gibidir, iki yanında da tam cümle ister. Burada sol taraf tam değil.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "After a dependent clause, use a comma.",
+    "tr": "Yan cümleden sonra virgül kullanılır.",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "Because the soil was dry, the farmers waited.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: both sides of a semicolon must be complete sentences.",
+    "tr": "Kısaca: noktalı virgülün iki tarafı da tam cümle olmalı.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "05_b5",
+  "rule": "b5",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "Kepler—who studied planets, was also an astrologer.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "\"Who studied planets\" is extra information. Remove it, and the sentence is still complete.",
+    "tr": "\"who studied planets\" kısmı ek bilgi. Çıkarsan cümle yine tam kalır.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "The extra information opens with a dash but closes with a comma. The pair doesn't match.",
+    "tr": "Ek bilgi tireyle açılmış ama virgülle kapanmış. Çift uyuşmuyor.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "Open with a dash, close with a dash. Open with a comma, close with a comma.",
+    "tr": "Tireyle açtıysan tireyle kapat, virgülle açtıysan virgülle.",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "Kepler—who studied planets—was also an astrologer.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: extra information opens and closes with the same pair of marks.",
+    "tr": "Kısaca: ek bilgi bir çift işaretle açılır ve aynı işaretle kapanır.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "06_b6",
+  "rule": "b6",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "The comedian, Jemaine Clement, voiced the crab.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "If we only say \"the comedian\", we don't know which comedian. The name tells us who.",
+    "tr": "Sadece \"the comedian\" dersek hangi komedyen olduğunu bilemeyiz. İsim, kim olduğunu belirliyor.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "Identifying information is essential, so it isn't set off with commas.",
+    "tr": "Belirleyici bilgi gerekli bilgidir, virgüllerle ayrılmaz.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "We remove the commas, and the name sticks to the subject.",
+    "tr": "Virgülleri kaldırıyoruz, isim özneye yapışıyor.",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "The comedian Jemaine Clement voiced the crab.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: information that identifies who you mean takes no commas. A clause starting with \"that\" never takes commas either.",
+    "tr": "Kısaca: kimden bahsedildiğini belirleyen bilgi virgülsüz yazılır. \"that\" ile başlayan kısım da her zaman virgülsüz.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "07_b7",
+  "rule": "b7",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "The scientists who studied the samples, concluded that the rocks were volcanic.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "The subject is long: \"the scientists who studied the samples\". When it's long, a comma feels tempting.",
+    "tr": "Özne uzun: \"the scientists who studied the samples\". Uzun olunca araya virgül koymak cazip geliyor.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "But no punctuation goes between a subject and its verb.",
+    "tr": "Ama özne ile yüklemin arasına hiçbir noktalama girmez.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "We delete the comma. The subject connects directly to the verb.",
+    "tr": "Virgülü siliyoruz. Özne doğrudan yükleme bağlanır.",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "The scientists who studied the samples concluded that the rocks were volcanic.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: no punctuation between subject and verb, or between verb and object.",
+    "tr": "Kısaca: özne ile yüklem, yüklem ile nesne arasında noktalama yok.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "08_b8",
+  "rule": "b8",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "They asked how could the lake be saved?",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "\"They asked how\" reports a question; it doesn't ask one directly. This is an indirect question.",
+    "tr": "Bu doğrudan bir soru değil, bir sorunun aktarılması. Buna dolaylı soru denir.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "An indirect question doesn't use question word order, and it doesn't take a question mark.",
+    "tr": "Dolaylı soruda soru sırası kullanılmaz ve soru işareti konmaz.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "Use normal order: \"the lake could\", and end with a period.",
+    "tr": "Normal cümle sırası: \"the lake could\". Sonuna da nokta.",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "They asked how the lake could be saved.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: after \"asked how\", \"wondered why\", or \"whether\", use normal sentence order and end with a period.",
+    "tr": "Kısaca: asked how, wondered why, whether ile gelen kısım düz cümle sırasıyla yazılır ve nokta ile biter.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "09_b9",
+  "rule": "b9",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "After the storm passed the crew repaired the roof.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "The sentence opens with an introduction: \"after the storm passed\". The main sentence is \"the crew repaired the roof\".",
+    "tr": "Cümle \"after the storm passed\" diye bir girişle başlıyor. Asıl cümle: \"the crew repaired the roof\".",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "Something is missing where the introduction ends.",
+    "tr": "Girişin bittiği yerde bir işaret eksik.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "We put a comma after the introduction.",
+    "tr": "Girişten sonra virgül koyuyoruz.",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "After the storm passed, the crew repaired the roof.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: an introduction starting with \"after\", \"although\", \"because\", or \"to\" is followed by a comma.",
+    "tr": "Kısaca: after, although, because ya da to ile başlayan girişten sonra virgül gelir.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "10_b10",
+  "rule": "b10",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "The kit includes, a map, a compass, and a whistle.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "Here we have a list of three items: a map, a compass, a whistle.",
+    "tr": "Burada üç öğeli bir liste var: a map, a compass, a whistle.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "There's a comma before the first item. That's wrong.",
+    "tr": "Listenin ilk öğesinden önce virgül konmuş. Bu yanlış.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "Put commas between the items, but not before the first one.",
+    "tr": "Öğelerin arasına virgül koy, ama ilk öğeden önce koyma.",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "The kit includes a map, a compass, and a whistle.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: separate list items with commas. No comma as you enter the list.",
+    "tr": "Kısaca: liste öğelerini virgülle ayır. Listeye girerken virgül yok.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "11_f1",
+  "rule": "f1",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "The collection of ancient coins are displayed.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "What is displayed? The collection. The real subject is \"collection\", and it's singular.",
+    "tr": "Ne sergileniyor? Koleksiyon. Gerçek özne \"collection\", yani tekil.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "\"Of ancient coins\" is plural, so \"are\" was used. That's the trap.",
+    "tr": "Araya giren \"of ancient coins\" çoğul olduğu için \"are\" yazılmış. Tuzak bu.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "Ignore the middle part and look at the subject: \"the collection is\".",
+    "tr": "Araya gireni yok say, özneye bak: \"the collection is\".",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "The collection of ancient coins is displayed.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: ignore the phrase starting with \"of\", and match the verb to the real subject.",
+    "tr": "Kısaca: \"of\" ile başlayan kısmı yok say, yüklemi gerçek özneye uydur.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "12_f2",
+  "rule": "f2",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "Using public domain songs ensure that the film is legal.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "The subject starts with \"using\". So the subject is an action: using the songs.",
+    "tr": "Öznenin başında \"using\" var. Yani özne bir eylem: şarkıları kullanmak.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "\"Songs\" is plural, so \"ensure\" was used. But the subject is one action.",
+    "tr": "\"songs\" çoğul diye \"ensure\" yazılmış. Ama özne tek bir eylem.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "We use a singular verb: \"ensures\".",
+    "tr": "Tekil yüklem kullanıyoruz: \"ensures\".",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "Using public domain songs ensures that the film is legal.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: a subject starting with an \"-ing\" word or with \"to\" is singular.",
+    "tr": "Kısaca: -ing ya da \"to\" ile başlayan özne tekildir.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "13_f3",
+  "rule": "f3",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "The committee released their report.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "\"The committee\" is one group, even with many people in it. It's singular.",
+    "tr": "\"The committee\", yani kurul. İçinde çok kişi olsa da tek bir grup. Tekil.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "\"Their\" is a plural pronoun. It doesn't match a singular noun.",
+    "tr": "\"Their\" çoğul zamir. Tekil isme uymaz.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "For a singular noun, we use \"its\".",
+    "tr": "Tekil isim için \"its\" kullanıyoruz.",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "The committee released its report.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: a pronoun must match its noun in number. For company, team, or committee, use \"it\" and \"its\".",
+    "tr": "Kısaca: zamir, yerini tuttuğu isimle sayıca aynı olmalı. company, team, committee için \"it\" ve \"its\".",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "14_f4",
+  "rule": "f4",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "The octopus can change it's color.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "We mean the octopus's color. So this is possession.",
+    "tr": "Burada ahtapotun rengi kastediliyor. Yani sahiplik var.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "\"It's\" means \"it is\". \"It is color\" makes no sense.",
+    "tr": "\"It's\", yani \"it is\". \"It is color\" anlamsız.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "For possession, use \"its\" with no apostrophe.",
+    "tr": "Sahiplik için kesme işaretsiz \"its\".",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "The octopus can change its color.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: \"its\" shows possession, \"it's\" means \"it is\". \"Their\" is possession, \"there\" is a place, \"they're\" means \"they are\".",
+    "tr": "Kısaca: its = onun, it's = it is. their = onların, there = orada, they're = they are.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "15_f5",
+  "rule": "f5",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "Place your hand's on the table.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "Here the hands don't own anything. They're just plural.",
+    "tr": "Burada eller hiçbir şeye sahip değil. Sadece çoğul.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "An apostrophe shows possession. No possession, no apostrophe.",
+    "tr": "Kesme işareti sahiplik gösterir. Sahiplik yoksa konmaz.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "We just add an \"s\": \"hands\".",
+    "tr": "Sadece s ekliyoruz: \"hands\".",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "Place your hands on the table.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: singular possession is apostrophe s, plural is just s, plural possession is s apostrophe.",
+    "tr": "Kısaca: tekil sahiplikte 's, çoğulda sadece s, çoğul sahiplikte s'.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "16_f6",
+  "rule": "f6",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "In 2023, the team publishing a study.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "The subject is \"the team\". So what did the team do?",
+    "tr": "Özne \"the team\". Peki takım ne yaptı?",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "\"Publishing\" can't be the main verb on its own. The sentence is incomplete.",
+    "tr": "\"Publishing\" tek başına yüklem olamaz. Cümle yarım kalıyor.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "We need a real, conjugated verb: \"published\".",
+    "tr": "Çekimli bir yüklem lazım: \"published\".",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In 2023, the team published a study.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: every sentence needs a conjugated verb. An \"-ing\" word, \"to\", or \"having\" alone isn't enough.",
+    "tr": "Kısaca: her cümlenin çekimli bir yüklemi olmalı. -ing, to ve having tek başına yetmez.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "17_f7",
+  "rule": "f7",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "A decade later, Land uses the filter.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "\"A decade later\" describes something that happened in the past. The text is in the past tense.",
+    "tr": "\"A decade later\" geçmişte olmuş bir olayı anlatıyor. Metin geçmiş zamanda.",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "\"Uses\" is present tense. It doesn't match the text.",
+    "tr": "\"Uses\" geniş zaman. Metnin zamanıyla uyuşmuyor.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "We use the past tense: \"used\".",
+    "tr": "Geçmiş zaman kullanıyoruz: \"used\".",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "A decade later, Land used the filter.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: find the time clue. \"In 1939\" means past, \"each night\" means present, and \"by the time\" means \"had\".",
+    "tr": "Kısaca: zaman ipucunu bul. \"In 1939\" geçmiş zaman, \"each night\" geniş zaman, \"by the time\" ise \"had\".",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ },
+ {
+  "id": "18_f8",
+  "rule": "f8",
+  "seg": [
+   {
+    "t": "There's a mistake in this sentence. Can you spot it?",
+    "tr": "Bu cümlede bir hata var. Görebiliyor musun?",
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "Using a telescope, a comet was spotted.",
+    "tr": null,
+    "l": "en",
+    "step": 0
+   },
+   {
+    "t": "\"Using a telescope\" means someone is using a telescope. So who is using it?",
+    "tr": "\"Using a telescope\", yani teleskop kullanarak. Peki teleskobu kim kullanıyor?",
+    "l": "en",
+    "step": 1
+   },
+   {
+    "t": "Right after the comma comes \"a comet\". A comet can't use a telescope.",
+    "tr": "Virgülden hemen sonra \"a comet\" gelmiş. Kuyruklu yıldız teleskop kullanamaz.",
+    "l": "en",
+    "step": 2
+   },
+   {
+    "t": "The person doing the action must come right after the comma: the astronomer.",
+    "tr": "Virgülden sonra işi yapan kişi gelmeli: the astronomer.",
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "Using a telescope, the astronomer spotted a comet.",
+    "tr": null,
+    "l": "en",
+    "step": 3
+   },
+   {
+    "t": "In short: after an opening phrase, the one doing the action comes right after the comma.",
+    "tr": "Kısaca: giriş ifadesinden sonra, virgülün hemen arkasına o işi yapan gelir.",
+    "l": "en",
+    "step": 4
+   },
+   {
+    "t": "One rule a day, with free practice.",
+    "tr": "Her gün bir kural, ücretsiz alıştırmalarla.",
+    "l": "en",
+    "step": 5
+   },
+   {
+    "t": "Scorepath. Link in bio.",
+    "tr": "Scorepath. Link profilde.",
+    "l": "en",
+    "step": 5
+   }
+  ]
+ }
+]

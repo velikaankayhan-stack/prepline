@@ -1,16 +1,17 @@
-# Zaman çizelgesi + ses karışımı. Kullanım: python3 prep.py <ses_kök> <out_dir> [fake]
+# Zaman çizelgesi + ses karışımı. Kullanım: python3 prep.py <ses_kök> <out_dir> [fake] [id...]
 import json,re,subprocess,sys,os
-SES=sys.argv[1]; OUT=sys.argv[2]; FAKE=len(sys.argv)>3
+SES=sys.argv[1]; OUT=sys.argv[2]; FAKE='fake' in sys.argv[3:]; ONLY=[a for a in sys.argv[3:] if a!='fake']
 s=open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','..','src','content.js')).read()
 A=json.loads(re.search(r'var GANIM=(\{.*?\});\n',s).group(1))
 G=json.loads(re.search(r'var GRAM=(\[.*?\]);\n',s).group(1))
-jobs=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'isler.json')))
+jobs=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'isler_en.json')))
 os.makedirs(OUT,exist_ok=True)
 def dur(p): return float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',p]).decode().strip())
 import numpy as np
-SR=48000; BASE_TEMPO=1.10
+SR=48000; BASE_TEMPO=0.92  # öğrenciler için biraz yavaş: ~170 kelime/dk (doğal hız ~185)
+MAX_PAUSE=0.35             # cümle içi/arası duraklama en fazla bu kadar kalır (sn)
 def process(mp3, out_wav, tempo):
-    """Baş/son sessizliği kırp, iç sessizlikleri 0.16 sn'ye indir, sonra hızlandır. Zaman eşleme fonksiyonu döndürür."""
+    """Baş/son sessizliği kırp, uzun iç sessizlikleri MAX_PAUSE'a indir, sonra hızlandır. Zaman eşleme fonksiyonu döndürür."""
     raw=subprocess.check_output(['ffmpeg','-v','error','-i',mp3,'-f','f32le','-ac','1','-ar',str(SR),'-'])
     x=np.frombuffer(raw,dtype=np.float32).copy()
     win=int(SR*0.01); n=len(x)//win
@@ -25,7 +26,8 @@ def process(mp3, out_wav, tempo):
             j=i
             while j<=last and not loud[j]: j+=1
             run=j-i
-            if run>16: keep[i+8:j-8]=False   # en fazla 0.16 sn bırak
+            half=int(MAX_PAUSE*50)
+            if run>2*half: keep[i+half:j-half]=False   # en fazla MAX_PAUSE bırak
             i=j
         else: i+=1
     removed=np.cumsum(~keep)*0.01           # her pencere sonuna kadar kesilen süre
@@ -54,6 +56,7 @@ def tokens_with_times(text, words, mp):
             out.append({"t":tk,"o":round(prev,1),"d":60})
     return out
 for n,j in enumerate(jobs):
+    if ONLY and j['id'] not in ONLY: continue
     d=os.path.join(SES,j['id']); os.makedirs(d,exist_ok=True)
     r=[x for x in G if x['id']==j['rule']][0]; a=A[j['rule']]
     segs=[]; t=0.35; prev=None
@@ -66,19 +69,20 @@ for n,j in enumerate(jobs):
             for w in sg['t'].split(): ws.append({"o":o,"d":wl*0.9,"t":w});o+=wl
             json.dump(ws,open(js,'w'))
         words=[w for w in json.load(open(js,encoding='utf-8')) if w.get('k','WordBoundary')=='WordBoundary']
-        acr=sg['t'].replace(' ','') in ('S.A.T.',)
         wav=os.path.join(OUT,'_tmp_%s_%02d.wav'%(j['id'],i))
-        mp=process(mp3,wav,BASE_TEMPO*(1.25 if acr else 1.0))
-        D=dur(wav); disp='SAT' if acr else sg['t']
-        words=[{"t":"SAT","o":0,"d":D*1000}] if acr else tokens_with_times(sg['t'],words,mp)
+        mp=process(mp3,wav,BASE_TEMPO)
+        D=dur(wav); disp=sg['t'].replace('S.A.T.','SAT')
+        words=tokens_with_times(sg['t'],words,mp)
+        for w in words: w['t']=w['t'].replace('S.A.T.','SAT')
         mp3=wav
         if prev is not None:
-            gap = 0.03 if sg['step']==prev['step'] else 0.30
-            if prev['step']==0 and i==1: gap=0.20
+            gap = 0.12 if sg['step']==prev['step'] else 0.60   # TR/EN geçişinde kısa nefes, adımlar arası net duraklama
+            if sg['step']==prev['step'] and sg['l']==prev['l']: gap=0.35
+            if prev['step']==0 and i==1: gap=0.45
             if prev['step']==0 and sg['step']==1: gap=2.4   # düşünme payı: 3-2-1 sayacı
             t+=gap
         if sg['step']==5 and prev and prev['step']!=5: t+=0.2
-        segs.append({"t":disp,"l":sg['l'],"step":sg['step'],"start":round(t,3),"dur":round(D,3),"words":words,"file":mp3})
+        segs.append({"t":disp,"tr":sg.get('tr'),"l":sg['l'],"step":sg['step'],"start":round(t,3),"dur":round(D,3),"words":words,"file":mp3})
         t+=D; prev=sg
     total=t+1.3
     stepStart=[]
